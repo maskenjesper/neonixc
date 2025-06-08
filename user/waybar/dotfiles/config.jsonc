@@ -1,0 +1,11 @@
+[
+    {
+        "layer": "top",
+        "include": [
+            "~/.config/waybar/default-modules.jsonc"
+        ],
+        "modules-left": ["hyprland/workspaces"],
+        "modules-center": ["clock", "hyprland/submap", "gamemode"],
+        "modules-right": ["tray", "hyprland/language", "pulseaudio"]
+    },
+]

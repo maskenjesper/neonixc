@@ -1,0 +1,23 @@
+modmap:
+  - name: main remaps
+    remap:
+      CapsLock:
+        held: leftctrl
+        alone: esc
+        alone_timeout_millis: 250
+      esc: CapsLock
+keymap:
+  - name: main keymaps
+    remap:
+      ALT-KEY_SEMICOLON:
+        launch: ["wtype", "ö"]
+      ALT-KEY_APOSTROPHE:
+        launch: ["wtype", "ä"]
+      ALT-KEY_LEFTBRACE:
+        launch: ["wtype", "å"]
+      ALT-C-KEY_SEMICOLON:
+        launch: ["wtype", "Ö"]
+      ALT-C-KEY_APOSTROPHE:
+        launch: ["wtype", "Ä"]
+      ALT-C-KEY_LEFTBRACE:
+        launch: ["wtype", "Å"]
