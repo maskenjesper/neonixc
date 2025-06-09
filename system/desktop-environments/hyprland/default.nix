@@ -28,35 +28,8 @@
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   environment.systemPackages = with pkgs; [
-    libsForQt5.qt5.qtquickcontrols2
-    libsForQt5.qt5.qtgraphicaleffects
 
-    hyprshot
 
-    waypaper
-    swww
-    swaybg
 
-    # Notifications
-    swaynotificationcenter
-    libnotify # notification dep
-
-    # Locking
-    hyprlock
-
-    hyprsunset
-    hyprpolkitagent
-    hyprpicker
-    hypridle
-
-    # Panel and widgets
-    waybar
-
-    # App launcher
-    rofi-wayland
-
-    # Clipboard management
-    wl-clipboard
-    cliphist
   ];
 }

@@ -26,6 +26,35 @@
     usbimager
     galculator
 
+    hyprshot
+    libsForQt5.qt5.qtquickcontrols2
+    libsForQt5.qt5.qtgraphicaleffects
+    waypaper
+    swww
+    swaybg
+    # Notifications
+    swaynotificationcenter
+    libnotify # notification dep
+
+    # Locking
+    hyprlock
+
+    hyprsunset
+    hyprpolkitagent
+    hyprpicker
+    hypridle
+
+    # Panel and widgets
+    waybar
+
+    # App launcher
+    rofi-wayland
+
+    # Clipboard management
+    wl-clipboard
+    cliphist
+
+#####################
     # Disk usage analyzer
     baobab
 

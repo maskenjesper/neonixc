@@ -18,6 +18,7 @@
 
   environment.systemPackages = with pkgs; [
 
+    # Avoid adding packages here.
 
   ];
 
