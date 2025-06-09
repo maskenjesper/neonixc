@@ -36,6 +36,7 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
+  services.flatpak.enable = true;
 
   nix.settings.auto-optimise-store = true;
 

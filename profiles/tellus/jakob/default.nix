@@ -1,38 +1,35 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
-}: {
+}: 
+{
   imports = [
-    ../../../user/global
-    ../../../user/nixCats
-    ../../../user/git
-    ../../../user/gh
-    ../../../user/kitty
-    ../../../user/fish
-    ../../../user/tmux
-    ../../../user/hyprland
-    ../../../user/waybar
-    ../../../user/wofi
-    ../../../user/stylix
-    ../../../user/xremap
+    ../../../user/common
+    ../../../user/terminal/apps/nixCats
+    ../../../user/terminal/apps/tmux
+    ../../../user/terminal/apps/git
+    ../../../user/terminal/apps/gh
+    ../../../user/terminal/apps/direnv
+    ../../../user/terminal/emulators/kitty
+    ../../../user/terminal/shells/fish
+    ../../../user/desktop-environments/hyprland
   ];
 
   home.username = "jakob";
   home.homeDirectory = "/home/jakob";
 
-  programs = {
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-  };
-
   # For packages that need no configuration (yet...)
   home.packages = with pkgs; [
     # Trying out
     udiskie
+
+    # don't know if this is needed
+    appimage-run
+    nix-index
+    vncdo
+    ripgrep
+    zoxide
+    fzf
 
     # Media
     vlc
@@ -43,8 +40,6 @@
 
     # Office
     masterpdfeditor
-    evince
-    libreoffice
 
     # Dev
 
@@ -76,21 +71,15 @@
     baobab
     pwvucontrol
     gucharmap
-    filezilla
 
     # Messaging
-    thunderbird
     discord
-    telegram-desktop
 
     # Browsers
     vivaldi
 
     # Music
     spotify
-
-    # Notes
-    obsidian
 
     # Networking
     traceroute

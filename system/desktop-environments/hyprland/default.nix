@@ -3,6 +3,10 @@
   config,
   ...
 }: {
+  imports = [
+    ./submodules/stylix
+  ];
+
   programs.uwsm = {
     enable = true;
     waylandCompositors.hyprland = {

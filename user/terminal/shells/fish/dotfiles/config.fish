@@ -27,6 +27,10 @@ function vt
     tvim .
 end
 
+function test123
+    echo test
+end
+
 
 
 # just global
