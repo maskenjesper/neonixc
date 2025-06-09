@@ -1,10 +1,9 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{ pkgs, ... }: {
   imports = [
     ./submodules/stylix
+    ./submodules/audio
+    ./submodules/printing
+    ./submodules/bluetooth
   ];
 
   programs.uwsm = {

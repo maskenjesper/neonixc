@@ -9,12 +9,9 @@
     ../../system/features/adb
     ../../system/features/gaming 
     ../../system/features/virtualization
-    ../../system/hardware/bluetooth
     ../../system/hardware/nvidia
-    ../../system/hardware/audio
     ../../system/hardware/keyboard/keymap
     ../../system/hardware/keyboard/xremap
-    ../../system/hardware/printing
   ];
 
   networking.hostName = "tellus"; # Define your hostname.
