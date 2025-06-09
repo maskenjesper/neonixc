@@ -27,23 +27,6 @@ function vt
     tvim .
 end
 
-function test123
-    echo test
-end
-
-
-
-# just global
-function jj
-    just -g $1
-end
-function jjl
-    just -gl
-end
-function jjs
-    just -g sync
-end
-
 function dn
     devnew
 end

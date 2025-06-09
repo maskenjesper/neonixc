@@ -58,7 +58,7 @@
 
     homeConfigurations = {
       "jakob@tellus" = inputs.home-manager.lib.homeManagerConfiguration {
-        modules = [./profiles/tellus/jakob];
+        modules = [./profiles/tellus/jakob ./tasks];
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
       };

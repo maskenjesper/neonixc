@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: 
+{ pkgs, ... }: 
 {
   imports = [
     ../../../user/common
@@ -21,19 +18,11 @@
   # For packages that need no configuration (yet...)
   home.packages = with pkgs; [
     # Trying out
-    udiskie
 
     # don't know if this is needed
-    appimage-run
-    nix-index
-    vncdo
-    ripgrep
-    zoxide
-    fzf
 
     # Media
     vlc
-    shotcut
     audacity
     rnote
     sweethome3d.application
@@ -46,32 +35,6 @@
     # Studies
     anki-bin
 
-    # CLI utilities
-    lazygit
-    zip
-    unzip
-    htop
-    killall
-    playerctl
-    neofetch
-    lm_sensors
-    hddtemp
-    wget
-    curl
-
-    # GUI utilities
-    guvcview
-    alarm-clock-applet
-    resources
-    nautilus
-    usbimager
-    galculator
-    gnome-disk-utility
-    udisks
-    baobab
-    pwvucontrol
-    gucharmap
-
     # Messaging
     discord
 
@@ -80,11 +43,7 @@
 
     # Music
     spotify
-
-    # Networking
-    traceroute
-    networkmanagerapplet
-
+            
     # Productivity
     pomodoro-gtk
     blanket

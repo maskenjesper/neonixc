@@ -1,4 +1,4 @@
-{ ... }: { 
+{ pkgs, ... }: { 
   imports = [
     ./hardware-configuration.nix 
 
@@ -17,6 +17,11 @@
   ];
 
   networking.hostName = "tellus"; # Define your hostname.
+
+  environment.systemPackages = with pkgs; [
+
+
+  ];
 
   system.stateVersion = "24.05";
 }
