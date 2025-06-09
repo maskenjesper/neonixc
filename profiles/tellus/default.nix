@@ -27,9 +27,7 @@
   programs.fish.enable = true;
 
   environment.systemPackages = with pkgs; [
-
     # Avoid adding packages here.
-
   ];
 
   system.stateVersion = "24.05";

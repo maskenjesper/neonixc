@@ -45,7 +45,6 @@
     inherit lib;
     formatter = forEachSystem (pkgs: pkgs.alejandra);
 
-
     nixosConfigurations = {
       tellus = lib.nixosSystem {
         modules = [./profiles/tellus];

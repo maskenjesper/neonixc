@@ -9,7 +9,7 @@ require("lze").load({
 	{ import = "jakob.general.which-key" },
 	{ import = "jakob.general.treesitter" },
 	{ import = "jakob.general.snacks" },
-	{ import = "jakob.general.obsidian" },
+    -- { import = "jakob.general.obsidian" },
 	{ import = "jakob.general.indent-blankline" },
 	{ "markview.nvim" },
 	{ "dressing.nvim" },
