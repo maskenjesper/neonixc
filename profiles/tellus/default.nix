@@ -3,7 +3,6 @@
     ./hardware-configuration.nix 
 
     ../../system/common
-    ../../system/users/jakob
     ../../system/desktop-environments/hyprland
     ../../system/apps/_1password
     ../../system/features/adb
@@ -15,6 +14,17 @@
   ];
 
   networking.hostName = "tellus"; # Define your hostname.
+
+  users.users.jakob = {
+    isNormalUser = true;
+    shell = pkgs.fish;
+    description = "Jakob Olsson";
+    extraGroups = ["networkmanager" "wheel"];
+    packages = [
+      pkgs.home-manager
+    ];
+  };
+  programs.fish.enable = true;
 
   environment.systemPackages = with pkgs; [
 
