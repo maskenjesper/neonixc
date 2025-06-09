@@ -1,13 +1,4 @@
-# This file (and the global directory) holds config that i use on all hosts
-{
-  inputs,
-  outputs,
-  pkgs,
-  ...
-}: {
-
-  environment.shells = with pkgs; [bashInteractive];
-  users.defaultUserShell = pkgs.bash;
+{ ... }: {
 
   nixpkgs.config.allowUnfree = true;
 
