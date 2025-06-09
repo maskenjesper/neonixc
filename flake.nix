@@ -33,6 +33,10 @@
 
     forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
 
+    forAllSystems = inputs.nixpkgs.lib.genAttrs systems;
+    nixpkgsFor =
+      forAllSystems (system: import inputs.nixpkgs { inherit system; });
+
     pkgsFor = lib.genAttrs systems (
       system:
         import nixpkgs {
@@ -44,6 +48,23 @@
   in {
     inherit lib;
     formatter = forEachSystem (pkgs: pkgs.alejandra);
+
+    packages = forAllSystems (system:
+      let pkgs = nixpkgsFor.${system};
+      in {
+        install = pkgs.writeShellApplication {
+          name = "install";
+          runtimeInputs = with pkgs; [ git ];
+          text = ''${./assets/scripts/install.sh} "$@"'';
+        };
+      });
+
+    apps = forAllSystems (system: {
+      default = {
+        type = "app";
+        program = "${self.packages.${system}.install}/bin/install";
+      };
+    });
 
     nixosConfigurations = {
       tellus = lib.nixosSystem {
