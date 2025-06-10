@@ -19,9 +19,9 @@ fi
 sudo echo "Installing nix config for host ${HOST_NAME} with user ${USER_NAME}..."
 
 echo "Cloning repo..."
-git clone https://github.com/maskenjesper/neonixc.git "/home/${USER_NAME}/testnixc"
+git clone https://github.com/maskenjesper/neonixc.git "/home/${USER_NAME}/neonixc"
 
-pushd "/home/${USER_NAME}/testnixc" || exit
+pushd "/home/${USER_NAME}/neonixc" || exit
 
 # TODO If host and/or username doesn't exist already. Create a new template profile.
 
