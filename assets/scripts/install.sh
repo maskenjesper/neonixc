@@ -36,11 +36,11 @@ nix-channel --update
 nix-shell '<home-manager>' -A install
 
 echo ====================== Running home-manager ======================
-home-manager switch --impure --flake ".#${USER_NAME}@${HOST_NAME}" -b backup --show-trace -L -v
+home-manager switch --experimental-features 'nix-command flakes' --impure --flake ".#${USER_NAME}@${HOST_NAME}" -b backup --show-trace -L -v
 
 if [[ $? -eq 0 ]]; then
     echo ====================== Running nixos-rebuild ======================
-    sudo nixos-rebuild switch --impure --flake ".#${HOST_NAME}" --show-trace -L -v 
+    sudo nixos-rebuild switch --experimental-features 'nix-command flakes' --impure --flake ".#${HOST_NAME}" --show-trace -L -v 
     
     if [[ $? -eq 0 ]]; then
         echo Sync successful 
