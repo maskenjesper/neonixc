@@ -7,6 +7,7 @@
     ./submodules/waybar
     ./submodules/wofi
     ./submodules/stylix
+    ../../apps/file-managers/konqueror
   ];
 
   home.file.".config/hypr" = {
@@ -24,7 +25,6 @@
     resources
     nautilus
     usbimager
-    mediawriter
     galculator
 
     hyprshot
