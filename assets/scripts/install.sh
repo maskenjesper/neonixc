@@ -17,6 +17,6 @@ echo "Entering nix shell"
 nix-shell -p git
 
 echo "Cloning repo..."
-git clone https://github.com/maskenjesper/neonixc.git ~/neonixc
+git clone https://github.com/maskenjesper/neonixc.git ~/testnixc
 
 
