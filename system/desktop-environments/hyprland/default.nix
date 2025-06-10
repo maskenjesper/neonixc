@@ -5,6 +5,7 @@
     ./submodules/printing
     ./submodules/bluetooth
     ./submodules/disks
+    ../../apps/dolphin
   ];
 
   programs.uwsm = {

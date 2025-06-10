@@ -1,6 +1,6 @@
 {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
-        dolphin
+        kdePackages.dolphin
         kdePackages.qtsvg
         kdePackages.kio-fuse
         kdePackages.kio-extras
