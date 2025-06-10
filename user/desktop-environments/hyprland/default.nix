@@ -65,7 +65,7 @@
     udisks2
     udiskie
 
-    # Disks utitlity
+    # Camera utility
     guvcview
   ];
 }

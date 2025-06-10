@@ -4,6 +4,7 @@
     ./submodules/audio
     ./submodules/printing
     ./submodules/bluetooth
+    ./submodules/disks
   ];
 
   programs.uwsm = {
