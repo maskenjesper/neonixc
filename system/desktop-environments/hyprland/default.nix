@@ -6,6 +6,7 @@
     ./submodules/bluetooth
     ./submodules/disks
     ../../apps/dolphin
+    ../../apps/nautilus
   ];
 
   programs.uwsm = {
