@@ -30,10 +30,12 @@ pushd "/home/${USER_NAME}/testnixc" || exit
 # nix requires all files in the directory to be either commited or staged
 git add --all
 
-echo ====================== Running home-manager ======================
+echo "Installing home-manager"
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
 nix-shell '<home-manager>' -A install
+
+echo ====================== Running home-manager ======================
 home-manager switch --impure --flake ".#${USER_NAME}@${HOST_NAME}" -b backup --show-trace -L -v
 
 if [[ $? -eq 0 ]]; then
