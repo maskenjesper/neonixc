@@ -29,21 +29,20 @@ pushd "/home/${USER_NAME}/testnixc" || exit
 
 # nix requires all files in the directory to be either commited or staged
 git add --all
-
-echo ====================== Running home-manager ======================
-home-manager switch --experimental-features 'nix-command flakes' --impure --flake ".#${USER_NAME}@${HOST_NAME}" -b backup --show-trace -L -v
+echo ====================== Running nixos-rebuild ======================
+sudo nixos-rebuild switch --experimental-features 'nix-command flakes' --impure --flake ".#${HOST_NAME}" --show-trace -L -v 
 
 if [[ $? -eq 0 ]]; then
-    echo ====================== Running nixos-rebuild ======================
-    sudo nixos-rebuild switch --experimental-features 'nix-command flakes' --impure --flake ".#${HOST_NAME}" --show-trace -L -v 
+    echo ====================== Running home-manager ======================
+    home-manager switch --experimental-features 'nix-command flakes' --impure --flake ".#${USER_NAME}@${HOST_NAME}" -b backup --show-trace -L -v
     
     if [[ $? -eq 0 ]]; then
         echo Sync successful 
     else
-        echo Rebuild failed. Aborting...    
+        echo Home manager failed. Aborting...
     fi
 else
-    echo Home manager failed. Aborting...
+    echo Rebuild failed. Aborting...    
 fi
 
 popd || exit
