@@ -23,7 +23,6 @@
     gucharmap
     alarm-clock-applet
     resources
-    nautilus
     usbimager
     galculator
 
