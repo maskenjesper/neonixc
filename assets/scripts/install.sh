@@ -1,14 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Automated script to install my nix configuration.
-
-# Parse arguments
-#if [ $# -gt 1 ]; then
-#  HOSTNAME=$1
-#else
-#  echo "Invalid arguments"
-#fi
-
 
 echo "Installing nix config..."
 
