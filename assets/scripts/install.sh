@@ -3,10 +3,11 @@
 # Automated script to install my nix configuration.
 
 # Parse arguments
-if [ $# -gt 1 ] then
+if [ $# -gt 1 ] 
+  then
     HOSTNAME=$1
     USERNAME=$2
-else
+  else
     echo "Invalid arguments"
 fi
 
