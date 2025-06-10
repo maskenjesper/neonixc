@@ -24,6 +24,7 @@
     resources
     nautilus
     usbimager
+    mediawriter
     galculator
 
     hyprshot
