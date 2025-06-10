@@ -1,13 +1,53 @@
 #!/bin/sh
 
 # Automated script to install my nix configuration.
+if [ $# -gt 0 ]
+  then
+    HOST_NAME=$1
+  else
+    echo "Invalid arguments"
+    exit 1
+fi
+if [ $# -gt 1 ]
+  then
+    USER_NAME=$2
+  else
+    echo "Invalid arguments"
+    exit 1
+fi
 
-echo "Installing nix config..."
-
-echo "Entering nix shell"
-nix-shell -p git
+sudo echo "Installing nix config for host ${HOST_NAME} with user ${USER_NAME}..."
 
 echo "Cloning repo..."
-git clone https://github.com/maskenjesper/neonixc.git ~/testnixc
+git clone https://github.com/maskenjesper/neonixc.git "/home/${USER_NAME}/testnixc"
+
+pushd "/home/${USER_NAME}/testnixc" || exit
+
+# TODO If host and/or username doesn't exist already. Create a new template profile.
+
+
+
+# nix requires all files in the directory to be either commited or staged
+git add --all
+
+echo ====================== Running home-manager ======================
+home-manager switch --impure --flake ".#${USER_NAME}@${HOST_NAME}" -b backup --show-trace -L -v
+
+if [[ $? -eq 0 ]]; then
+    echo ====================== Running nixos-rebuild ======================
+    sudo nixos-rebuild switch --impure --flake ".#${HOST_NAME}" --show-trace -L -v 
+    
+    if [[ $? -eq 0 ]]; then
+        echo Sync successful 
+    else
+        echo Rebuild failed. Aborting...    
+    fi
+else
+    echo Home manager failed. Aborting...
+fi
+
+popd || exit
+
+
 
 
