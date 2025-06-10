@@ -73,7 +73,7 @@
 
         install = pkgs.writeShellApplication {
           name = "install";
-          runtimeInputs = with pkgs; [ git home-manager ];
+          runtimeInputs = with pkgs; [ git ];
           text = ''${./assets/scripts/install.sh} "$@"'';
         };
       });

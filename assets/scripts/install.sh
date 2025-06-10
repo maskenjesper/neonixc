@@ -31,6 +31,9 @@ pushd "/home/${USER_NAME}/testnixc" || exit
 git add --all
 
 echo ====================== Running home-manager ======================
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+nix-shell '<home-manager>' -A install
 home-manager switch --impure --flake ".#${USER_NAME}@${HOST_NAME}" -b backup --show-trace -L -v
 
 if [[ $? -eq 0 ]]; then
