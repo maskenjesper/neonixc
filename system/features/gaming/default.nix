@@ -11,6 +11,7 @@
     vulkan-tools
     mesa
     wayland-protocols
+    xwayland
   ];
 
   programs = {
