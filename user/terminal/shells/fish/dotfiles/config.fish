@@ -1,18 +1,18 @@
-if tty > /dev/null
-    #if uwsm check may-start && uwsm select
-    #    exec systemd-cat -t uwsm_start uwsm start default
-    #end
-    #set -U fish_greeting "login"
-    #set -gx EDITOR vim
-    echo login
-end
-
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-    #set -U fish_greeting "interactive"
-    #set -gx EDITOR vim
-    echo interactive
-end
+#if tty > /dev/null
+#    #if uwsm check may-start && uwsm select
+#    #    exec systemd-cat -t uwsm_start uwsm start default
+#    #end
+#    #set -U fish_greeting "login"
+#    #set -gx EDITOR vim
+#    echo login
+#end
+#
+#if status is-interactive
+#    # Commands to run in interactive sessions can go here
+#    #set -U fish_greeting "interactive"
+#    #set -gx EDITOR vim
+#    echo interactive
+#end
 
 bind \cj down-or-search
 bind \ck up-or-search
