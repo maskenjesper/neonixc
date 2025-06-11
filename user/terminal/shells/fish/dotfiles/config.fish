@@ -20,6 +20,16 @@ bind \ce tmux-sessionizer
 bind \cw 'tmux-sessionizer $(pwd)'
 bind \cr 'tmux-sessionizer $HOME'
 
+function me
+    tmux-sessionizer
+end
+function mw
+    'tmux-sessionizer $(pwd)'
+end
+function mr
+    'tmux-sessionizer $HOME'
+end
+
 function vv
     vim .
 end
