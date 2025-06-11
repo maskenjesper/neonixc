@@ -24,10 +24,10 @@ function me
     tmux-sessionizer
 end
 function mw
-    'tmux-sessionizer $(pwd)'
+    tmux-sessionizer $(pwd)
 end
 function mr
-    'tmux-sessionizer $HOME'
+    tmux-sessionizer $HOME
 end
 
 function vv
