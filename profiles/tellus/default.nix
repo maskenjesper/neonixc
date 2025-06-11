@@ -22,6 +22,8 @@
       lightdm.enable = false;
   };
 
+  systemd.services.display-manager.enable = false;
+
   users.users.jakob = {
     isNormalUser = true;
     shell = pkgs.fish;
