@@ -15,6 +15,13 @@
 
   networking.hostName = "tellus"; # Define your hostname.
 
+  services.displayManager = {
+      gdm.enable = false;
+  };
+  services.xserver.displayManager = {
+      lightdm.enable = false;
+  };
+
   users.users.jakob = {
     isNormalUser = true;
     shell = pkgs.fish;
