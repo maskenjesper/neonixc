@@ -12,7 +12,9 @@
     mesa
     wayland-protocols
     xwayland
+    xorg.libxcb
   ];
+
 
   programs = {
     steam.enable = true;
