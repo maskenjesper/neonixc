@@ -1,6 +1,6 @@
 { config, ... }: {
   home.file.".config/fish" = {
-    source = config.lib.file.mkOutOfStoreSymlink ./. + "/dotfiles";
+    source = config.lib.file.mkOutOfStoreSymlink ./dotfiles;
     recursive = true;
   };
 
