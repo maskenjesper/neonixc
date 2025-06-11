@@ -1,4 +1,4 @@
-if status is-login
+if tty > /dev/null
     #if uwsm check may-start && uwsm select
     #    exec systemd-cat -t uwsm_start uwsm start default
     #end
