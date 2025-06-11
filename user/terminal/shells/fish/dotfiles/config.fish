@@ -1,12 +1,14 @@
-#if status is-login
-#    if uwsm check may-start && uwsm select
-#        exec systemd-cat -t uwsm_start uwsm start default
-#    end
-#end
+if status is-login
+    #if uwsm check may-start && uwsm select
+    #    exec systemd-cat -t uwsm_start uwsm start default
+    #end
+    set -U fish_greeting "login"
+    set -gx EDITOR vim
+end
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    set -U fish_greeting ""
+    set -U fish_greeting "interactive"
     set -gx EDITOR vim
 end
 
@@ -47,7 +49,8 @@ function cls
     clear
 end
 function uwu
-    systemd-cat -t uwsm_start uwsm start default
+    #systemd-cat -t uwsm_start uwsm start default
+    exec uwsm start default
 end
 function lg
     lazygit
