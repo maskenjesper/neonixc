@@ -1,6 +1,6 @@
 { pkgs, config, ... }: {
   home.file.".config/just" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/jakob/neonixc/tasks/dotfiles";
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/neonixc/tasks/dotfiles";
     recursive = true;
   };
 
