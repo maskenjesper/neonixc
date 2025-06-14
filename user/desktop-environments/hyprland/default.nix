@@ -10,7 +10,7 @@
   ];
 
   home.file.".config/hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "~/neonixc/user/desktop-environments/hyprland/dotfiles";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/jakob/neonixc/user/desktop-environments/hyprland/dotfiles";
     recursive = true;
   };
 
