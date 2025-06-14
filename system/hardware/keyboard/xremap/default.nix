@@ -1,7 +1,7 @@
 {
   pkgs,
   inputs,
-  users,
+  localUsers,
   ...
 }: {
   imports = [
@@ -26,6 +26,6 @@
     wtype
   ];
   hardware.uinput.enable = true;
-  users.groups.uinput.members = users;
-  users.groups.input.members = users;
+  users.groups.uinput.members = localUsers;
+  users.groups.input.members = localUsers;
 }

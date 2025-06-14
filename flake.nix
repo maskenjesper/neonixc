@@ -49,23 +49,6 @@
     inherit lib;
     formatter = forEachSystem (pkgs: pkgs.alejandra);
 
-#    packages = forAllSystems (system:
-#      let pkgs = nixpkgsFor.${system};
-#      in {
-#        install = pkgs.writeShellApplication {
-#          name = "install";
-#          runtimeInputs = with pkgs; [ git home-manager ];
-#          text = ''${./assets/scripts/install.sh} "$@"'';
-#        };
-#      });
-#
-#    apps = forAllSystems (system: {
-#      default = {
-#        type = "app";
-#        program = "${self.packages.${system}.install}/bin/install";
-#      };
-#    });
-
     packages = forAllSystems (system:
       let pkgs = nixpkgsFor.${system};
       in {
@@ -92,7 +75,7 @@
         modules = [./profiles/tellus];
         specialArgs = {
           inherit inputs outputs; 
-          users = ["jakob"];
+          localUsers = ["jakob"];
         };
       };
     };
