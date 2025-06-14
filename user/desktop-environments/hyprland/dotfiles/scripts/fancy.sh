@@ -9,10 +9,10 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword general:gaps_out 0;\
         keyword general:border_size 1;\
         keyword decoration:rounding 0"
-    notify-send "Fancy mode"
+    notify-send "Potato mode"
     exit
 else
-    notify-send "Potato mode"
+    notify-send "Fancy mode"
 fi
 
 hyprctl reload
