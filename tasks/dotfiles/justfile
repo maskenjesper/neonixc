@@ -6,3 +6,9 @@
 
 sync:
   ~/.config/just/sync.sh
+
+syncHome:
+  ~/.config/just/sync-home.sh
+
+syncSystem:
+  ~/.config/just/sync-system.sh
