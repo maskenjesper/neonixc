@@ -15,13 +15,6 @@
 
   networking.hostName = "tellus"; # Define your hostname.
 
-  services.displayManager = {
-      gdm.enable = false;
-  };
-  services.xserver.displayManager = {
-      lightdm.enable = false;
-  };
-
   systemd.services.display-manager.enable = false;
 
   users.users.jakob = {

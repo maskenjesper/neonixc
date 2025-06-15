@@ -11,6 +11,8 @@ require("lze").load({
 	{ import = "jakob.general.snacks" },
     -- { import = "jakob.general.obsidian" },
 	{ import = "jakob.general.indent-blankline" },
+    -- { import = "jakob.general.zen-mode" },
+        
 	{ "markview.nvim" },
 	{ "dressing.nvim" },
 	{ "vim-tmux-navigator" },

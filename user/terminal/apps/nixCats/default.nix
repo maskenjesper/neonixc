@@ -66,6 +66,8 @@ in {
       ];
 
       optionalPlugins.general = with pkgs.vimPlugins; [
+        zen-mode-nvim
+
         hologram-nvim
         indent-blankline-nvim
         obsidian-nvim
@@ -142,7 +144,7 @@ in {
       testCats = {pkgs, ...}: {
         settings = {
           wrapRc = false;
-          unwrappedCfgPath = "${config.home.homeDirectory}/nixc/home/jakob/tellus/features/nixCats/dotfiles";
+          unwrappedCfgPath = "${config.home.homeDirectory}/neonixc/user/terminal/apps/nixCats/dotfiles";
           aliases = ["tvim"];
         };
 

@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, inputs, ... }: 
 {
   imports = [
     ../../../user/common
@@ -10,6 +10,7 @@
     ../../../user/terminal/emulators/kitty
     ../../../user/terminal/shells/fish
     ../../../user/desktop-environments/hyprland
+    ../../../user/apps/zen-browser
   ];
 
   home.username = "jakob";
@@ -18,6 +19,7 @@
   # For packages that need no configuration (yet...)
   home.packages = with pkgs; [
     # Trying out
+    tree
 
     # don't know if this is needed
 

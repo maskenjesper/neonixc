@@ -23,7 +23,7 @@ git clone https://github.com/maskenjesper/neonixc.git
 
 pushd "./neonixc" || exit
 
-# TODO If host and/or username doesn't exist already. Create a new template profile.
+# TODO If host and/or username doesn't exist already. Create a new profile from template.
 
 
 
