@@ -52,6 +52,8 @@ in {
         yaml-language-server
 
         hyprls
+
+        csharp-ls
       ];
 
       startupPlugins.general = with pkgs.vimPlugins; [

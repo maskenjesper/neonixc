@@ -5,6 +5,7 @@
       text = ''
         vivaldi-bin
         zen-twilight
+        zen
       '';
       mode = "0755";
     };

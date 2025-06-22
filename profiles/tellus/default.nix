@@ -5,6 +5,7 @@
     ../../system/common
     ../../system/desktop-environments/hyprland
     ../../system/apps/_1password
+    ../../system/apps/teamviewer
     ../../system/features/adb
     ../../system/features/gaming 
     ../../system/features/virtualization

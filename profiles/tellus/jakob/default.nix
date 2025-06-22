@@ -33,15 +33,16 @@
     masterpdfeditor
 
     # Dev
+    
 
     # Studies
     anki-bin
+    exercism
 
     # Messaging
     discord
 
     # Browsers
-    vivaldi
 
     # Music
     spotify

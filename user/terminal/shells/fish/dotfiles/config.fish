@@ -24,6 +24,10 @@ bind \ce tmux-sessionizer
 bind \cw 'tmux-sessionizer $(pwd)'
 bind \cr 'tmux-sessionizer $HOME'
 
+function dallow
+    direnv allow 
+end
+
 function me
     tmux-sessionizer
 end

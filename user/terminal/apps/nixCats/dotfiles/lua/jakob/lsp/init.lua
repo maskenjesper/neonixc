@@ -23,7 +23,7 @@ servers.nixd = {
 		formatting = {
 			command = { "nixfmt" },
 		},
-		diagnostic = {
+        diagnostic = {
 			suppress = {
 				"sema-escaping-with",
 			},
@@ -44,6 +44,8 @@ servers.fish_lsp = {}
 servers.yamlls = {}
 
 servers.hyprls = {}
+
+servers.csharp_ls = {}
 
 require("lze").load({
 	{

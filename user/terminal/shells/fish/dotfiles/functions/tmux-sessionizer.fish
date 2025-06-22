@@ -5,7 +5,7 @@ function tmux-sessionizer --description "sessionizer"
         set session_path $argv[1]
     # use fzf for path
     else
-        set session_path (find ~/exercism ~/nixc ~/nixt ~/dev ~/.config -mindepth 0 -type d | fzf)
+        set session_path (find ~/exercism ~/ ~/nixt ~/neonixc ~/dev ~/.config -mindepth 0 -type d | fzf)
     end
 
     if test -z "$session_path"
