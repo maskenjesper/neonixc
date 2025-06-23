@@ -18,7 +18,7 @@
 
   systemd.services.display-manager.enable = false;
 
-  nix.settings.download-buffer-size = 1048576000 ;
+  nix.settings.download-buffer-size = 1048576000; # 1GB 
 
   users.users.jakob = {
     isNormalUser = true;

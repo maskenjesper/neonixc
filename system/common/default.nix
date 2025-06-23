@@ -31,11 +31,11 @@
 
   nix.settings.auto-optimise-store = true;
 
-  # Automatically delete generations older than 30 days.
+  # Automatically delete generations older than 7 days.
   nix.gc = {
     automatic = true;
     dates = "weelky";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 7d";
   };
 
   # Use flakes
