@@ -18,6 +18,8 @@
 
   systemd.services.display-manager.enable = false;
 
+  nix.settings.download-buffer-size = 1048576000 ;
+
   users.users.jakob = {
     isNormalUser = true;
     shell = pkgs.fish;
