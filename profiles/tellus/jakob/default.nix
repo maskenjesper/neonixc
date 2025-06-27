@@ -24,10 +24,7 @@
     homebank
     kmymoney
     syncthing
-    syncthingtray
 
-
-    bitwarden-desktop
     keepassxc
 
     obsidian
