@@ -14,7 +14,7 @@
             overrideDevices = true;
             overrideFolders = true;
             devices = {
-                "phone" = { id = "key"; };
+                "phone" = { id = "3Y7HXLU-57OAFNZ-MO5PJ2T-PY7MOPA-U6RHHGF-4BUQEGX-7JRNZBZ-Q4CAAAP"; };
             };
             folders = {
                 "second-brain" = {
