@@ -12,6 +12,7 @@
     ../../system/hardware/nvidia
     ../../system/hardware/keyboard/keymap
     ../../system/hardware/keyboard/xremap
+    ../../system/services/syncthing
   ];
 
   networking.hostName = "tellus"; # Define your hostname.

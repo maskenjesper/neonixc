@@ -20,6 +20,14 @@
   home.packages = with pkgs; [
     # Trying out
     tree
+    gnucash
+    homebank
+    kmymoney
+    syncthing
+    syncthingtray
+
+
+
 
     # don't know if this is needed
 
@@ -41,6 +49,7 @@
 
     # Messaging
     discord
+    signal-desktop
 
     # Browsers
 
