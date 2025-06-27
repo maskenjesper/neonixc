@@ -27,6 +27,11 @@
     syncthingtray
 
 
+    bitwarden-desktop
+    keepassxc
+
+    obsidian
+
 
 
     # don't know if this is needed

@@ -28,6 +28,17 @@
                         };
                     };
                 };
+                "passwords" = {
+                    path = "/home/jakob/passwords";
+                    devices = [ "phone" ];
+                    versioning = {
+                        type = "staggered";
+                        params = {
+                            cleanInterval = "3600";
+                            maxAge = "15768000";
+                        };
+                    };
+                };
             };
         };
     };
