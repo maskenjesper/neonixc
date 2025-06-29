@@ -29,6 +29,9 @@
 
     obsidian
 
+    cool-retro-term
+
+
 
 
     # don't know if this is needed

@@ -18,6 +18,9 @@
   wayland.windowManager.hyprland.systemd.enable = false;
 
   home.packages = with pkgs; [
+
+    hyprlandPlugins.hyprscrolling
+
     networkmanagerapplet
     gucharmap
     alarm-clock-applet
