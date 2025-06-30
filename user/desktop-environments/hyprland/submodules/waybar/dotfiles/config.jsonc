@@ -5,7 +5,7 @@
             "~/.config/waybar/default-modules.jsonc"
         ],
         "modules-left": ["hyprland/workspaces"],
-        "modules-center": ["clock", "hyprland/submap", "gamemode"],
+        "modules-center": ["clock", "hyprland/submap", "gamemode", "hyprland/window"],
         "modules-right": ["tray", "hyprland/language", "pulseaudio"]
     },
 ]

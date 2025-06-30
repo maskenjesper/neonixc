@@ -10,7 +10,7 @@
 
   services.xremap = {
     #withWlroots = true;
-    withHypr = true;
+    #withHypr = true;
     watch = true;
     yamlConfig = ''
       modmap:
