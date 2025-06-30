@@ -5,6 +5,7 @@
     mangohud
     lutris
     r2modman
+    heroic
     gamescope
     protonup-qt
     gamemode

@@ -19,7 +19,6 @@
 
   home.packages = with pkgs; [
 
-    hyprlandPlugins.hyprscrolling
 
     networkmanagerapplet
     gucharmap
