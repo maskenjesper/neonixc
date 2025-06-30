@@ -14,6 +14,7 @@
     wayland-protocols
     xwayland
     xorg.libxcb
+    modirnth-app
   ];
 
 
