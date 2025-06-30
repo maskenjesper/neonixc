@@ -21,7 +21,7 @@
               alone_timeout_millis: 250
             esc: CapsLock
           application:
-            not: [Deadlock]
+            not: Deadlock
     '';
   };
   environment.systemPackages = with pkgs; [
