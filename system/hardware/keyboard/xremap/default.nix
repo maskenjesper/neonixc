@@ -20,10 +20,13 @@
               alone: esc
               alone_timeout_millis: 250
             esc: CapsLock
+          application:
+            not: [Deadlock]
     '';
   };
   environment.systemPackages = with pkgs; [
     wtype
+    xremap
   ];
   hardware.uinput.enable = true;
   users.groups.uinput.members = localUsers;
