@@ -23,7 +23,6 @@
     gnucash
     homebank
     kmymoney
-    syncthing
     keepassxc
     obsidian
     cool-retro-term

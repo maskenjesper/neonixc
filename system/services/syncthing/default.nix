@@ -1,5 +1,5 @@
 
-{lib, config, ...}: 
+{lib, config, pkgs, ...}: 
 let
   # The phone does not run nixos so this might change
   phoneId = "3Y7HXLU-57OAFNZ-MO5PJ2T-PY7MOPA-U6RHHGF-4BUQEGX-7JRNZBZ-Q4CAAAP";
@@ -17,6 +17,9 @@ in {
     let
       cfg = config.syncthing;
     in {
+        environment.systemPackages = with pkgs; [
+            syncthing
+        ];
         # TODO remove hardcoded user
         services.syncthing = {
             enable = true;
