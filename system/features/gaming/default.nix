@@ -1,5 +1,5 @@
 
-{pkgs, config, ...}: {
+{pkgs, ...}: {
 
   environment.systemPackages = with pkgs; [
     mangohud
@@ -14,7 +14,6 @@
     wayland-protocols
     xwayland
     xorg.libxcb
-    modirnth-app
   ];
 
 
