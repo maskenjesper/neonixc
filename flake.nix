@@ -84,7 +84,7 @@
       };
 
       rpi = lib.nixosSystem {
-        modules = [./profiles/tellus];
+        modules = [./profiles/rpi];
         specialArgs = {
             inherit inputs outputs;
             localUsers = ["jakob"];
