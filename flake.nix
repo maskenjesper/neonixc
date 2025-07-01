@@ -4,7 +4,6 @@
   inputs = {
     # nix eco-system
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-24_11.url = "nixpkgs/nixos-24.11";
     nixpkgs-treesitter.url = "github:nixos/nixpkgs/932fc16b263f26803d3960e4400bc13dde84a972";
             
     home-manager = {
