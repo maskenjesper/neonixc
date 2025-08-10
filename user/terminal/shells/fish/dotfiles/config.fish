@@ -24,6 +24,16 @@ bind \ce tmux-sessionizer
 bind \cw 'tmux-sessionizer $(pwd)'
 bind \cr 'tmux-sessionizer $HOME'
 
+function sux
+    # use argument as path
+    set x (systemctl status xremap | grep -c running)
+    if test $x -eq 1 
+        sudo systemctl stop xremap
+    else
+        sudo systemctl start xremap
+    end
+end
+
 function dallow
     direnv allow 
 end

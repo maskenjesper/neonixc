@@ -9,6 +9,7 @@
     ../../system/features/adb
     ../../system/features/gaming 
     ../../system/features/virtualization
+    ../../system/features/appimage
     ../../system/hardware/nvidia
     ../../system/hardware/keyboard/keymap
     ../../system/hardware/keyboard/xremap

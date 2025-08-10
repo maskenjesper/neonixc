@@ -27,6 +27,9 @@
     obsidian
     cool-retro-term
 
+    prismlauncher
+
+
     # don't know if this is needed
 
     # Media

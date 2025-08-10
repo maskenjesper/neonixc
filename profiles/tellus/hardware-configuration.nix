@@ -8,35 +8,20 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "uas" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b4d05917-f3aa-4cdb-9511-b197507bdfdb";
+    { device = "/dev/disk/by-uuid/ce26906d-413d-436d-881a-1f3ee73aaba2";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/E1DC-1F27";
+    { device = "/dev/disk/by-uuid/CCB0-63A4";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
-    };
-
-  fileSystems."/mnt/ssd120_1" =
-    { device = "/dev/disk/by-uuid/6ec33609-d6ca-4919-b042-85cc4acf341f";
-      fsType = "ext4";
-    };
-
-  fileSystems."/mnt/ssd120_2" =
-    { device = "/dev/disk/by-uuid/5e7136a6-e2fa-4eaf-b971-f9a84aea1e4f";
-      fsType = "ext4";
-    };
-
-  fileSystems."/mnt/ssd250" =
-    { device = "/dev/disk/by-uuid/94c29e44-2aa2-4f52-8e40-b82b949f37f5";
-      fsType = "ext4";
     };
 
   swapDevices = [ ];
