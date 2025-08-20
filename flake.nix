@@ -92,6 +92,14 @@
             localUsers = ["jakob"];
         };
       };
+
+      jupiter = lib.nixosSystem {
+        modules = [./profiles/jupiter];
+        specialArgs = {
+          inherit inputs outputs; 
+          localUsers = ["jakob"];
+        };
+      };
     };
 
     homeConfigurations = {
@@ -103,6 +111,12 @@
 
       "jakob@rpi" = inputs.home-manager.lib.homeManagerConfiguration {
         modules = [./profiles/rpi/jakob ./tasks];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+      };
+
+      "jakob@jupiter" = inputs.home-manager.lib.homeManagerConfiguration {
+        modules = [./profiles/jupiter/jakob ./tasks];
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
       };
