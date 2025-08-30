@@ -1,11 +1,12 @@
 
 {pkgs, ...}: {
 
+  hardware.steam-hardware.enable = true;
+
   environment.systemPackages = with pkgs; [
     mangohud
     lutris
     r2modman
-    heroic
     gamescope
     protonup-qt
     gamemode
@@ -14,12 +15,20 @@
     wayland-protocols
     xwayland
     xorg.libxcb
+
+    (heroic.override {
+        extraPkgs = pkgs: [
+            pkgs.gamescope
+        ];
+    })
   ];
 
+  
 
   programs = {
     steam.enable = true;
     steam.gamescopeSession.enable = true;
     gamemode.enable = true;
+    gamescope.enable = true;
   };
 }

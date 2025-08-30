@@ -10,10 +10,11 @@
     ../../system/features/gaming 
     ../../system/features/virtualization
     ../../system/features/appimage
-    ../../system/hardware/nvidia
     ../../system/hardware/keyboard/keymap
     ../../system/hardware/keyboard/xremap
+    ../../system/hardware/amd-gpu
     ../../system/services/syncthing
+    ../../system/services/openrgb
   ];
 
   networking.hostName = "jupiter"; # Define your hostname.
@@ -27,7 +28,6 @@
       second-brain.devices = [ "phone" "rpi" ];
   };
 
-  systemd.services.display-manager.enable = false;
 
   nix.settings.download-buffer-size = 1048576000; # 1GB 
 

@@ -27,7 +27,14 @@
     obsidian
     cool-retro-term
 
-    prismlauncher
+    mission-center
+    furmark
+    hwinfo
+
+
+    kicad-small
+    freecad-wayland
+
 
     # don't know if this is needed
 
