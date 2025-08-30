@@ -7,7 +7,6 @@
     mangohud
     lutris
     r2modman
-    gamescope
     protonup-qt
     gamemode
     vulkan-tools
