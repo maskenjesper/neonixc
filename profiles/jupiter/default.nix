@@ -1,4 +1,4 @@
-{ pkgs, ... }: { 
+{ pkgs, inputs, ... }: { 
   imports = [
     ./hardware-configuration.nix 
 
@@ -28,7 +28,6 @@
       second-brain.devices = [ "phone" "rpi" ];
   };
 
-
   nix.settings.download-buffer-size = 1048576000; # 1GB 
 
   users.users.jakob = {
@@ -42,8 +41,10 @@
   };
   programs.fish.enable = true;
 
+
   environment.systemPackages = with pkgs; [
     # Avoid adding packages here.
+    inputs.dzgui-nix.packages.x86_64-linux.default
   ];
 
   system.stateVersion = "24.05";
