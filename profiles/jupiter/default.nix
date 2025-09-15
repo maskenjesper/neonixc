@@ -10,6 +10,7 @@
     ../../system/features/gaming 
     ../../system/features/virtualization
     ../../system/features/appimage
+    ../../system/features/stess_and_bench
     ../../system/hardware/keyboard/keymap
     ../../system/hardware/keyboard/xremap
     ../../system/hardware/amd-gpu

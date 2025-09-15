@@ -67,9 +67,6 @@
     pomodoro-gtk
     blanket
 
-    geekbench_6
-    phoronix-test-suite
-    stress-ng
   ];
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
