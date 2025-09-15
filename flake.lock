@@ -137,6 +137,26 @@
         "type": "github"
       }
     },
+    "dzgui-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749410315,
+        "narHash": "sha256-5H8MuMMSq1WnQcvb1FiDNkKP+uyeZ8HX5GRTMfEOyLI=",
+        "owner": "lelgenio",
+        "repo": "dzgui-nix",
+        "rev": "49adbb1edfb3c25b0cd8256d35673394386065e7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lelgenio",
+        "repo": "dzgui-nix",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -857,6 +877,7 @@
     },
     "root": {
       "inputs": {
+        "dzgui-nix": "dzgui-nix",
         "home-manager": "home-manager",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",

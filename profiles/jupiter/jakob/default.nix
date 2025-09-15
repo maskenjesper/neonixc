@@ -66,6 +66,8 @@
     # Productivity
     pomodoro-gtk
     blanket
+
+    geekbench_6
   ];
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
