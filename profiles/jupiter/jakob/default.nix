@@ -68,6 +68,7 @@
     blanket
 
     geekbench_6
+    phoronix-test-suite
   ];
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
