@@ -26,6 +26,11 @@
         url = "github:lelgenio/dzgui-nix";
         inputs.nixpkgs.follows = "nixpkgs";
     };
+    quickshell = {
+      # add ?ref=<tag> to track a tag
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
