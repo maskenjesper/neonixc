@@ -5,6 +5,7 @@
     ./submodules/printing
     ./submodules/bluetooth
     ./submodules/disks
+    ./submodules/quickshell
     ../../apps/dolphin
   ];
 

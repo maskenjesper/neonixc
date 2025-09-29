@@ -875,6 +875,26 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1759128992,
+        "narHash": "sha256-crjxt1g3zc3OtmE4xfbFouiDwAxqUmRfpTtfnkkJ8/0=",
+        "ref": "refs/heads/master",
+        "rev": "1d94144976252a922e03e4c0fbb921ee8b8bb079",
+        "revCount": 682,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      }
+    },
     "root": {
       "inputs": {
         "dzgui-nix": "dzgui-nix",
@@ -882,6 +902,7 @@
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
         "nixpkgs-treesitter": "nixpkgs-treesitter",
+        "quickshell": "quickshell",
         "stylix": "stylix",
         "xremap": "xremap",
         "zen-browser": "zen-browser"
