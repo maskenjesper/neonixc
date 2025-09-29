@@ -27,6 +27,8 @@
     obsidian
     cool-retro-term
 
+    element-desktop
+
     mission-center
     furmark
     hwinfo
