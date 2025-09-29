@@ -54,6 +54,7 @@ in {
         hyprls
 
         csharp-ls
+
       ];
 
       startupPlugins.general = with pkgs.vimPlugins; [

@@ -7,6 +7,7 @@
     ./submodules/waybar
     ./submodules/wofi
     ./submodules/stylix
+    ./submodules/quickshell
   ];
 
   home.file.".config/hypr" = {
