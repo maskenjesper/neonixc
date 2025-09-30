@@ -55,6 +55,7 @@ in {
 
         csharp-ls
 
+        kdePackages.qtdeclarative
       ];
 
       startupPlugins.general = with pkgs.vimPlugins; [

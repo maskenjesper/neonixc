@@ -6,5 +6,4 @@ ShellRoot {
     id: shellroot
     
     Bar {}
-    Dashboard {}
 }

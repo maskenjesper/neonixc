@@ -4,9 +4,9 @@ import QtQuick
 import QtQuick.Layouts
 import qs.config
 import qs.components
-import "startpart"
-import "endpart"
-import "middlepart"
+import "barstart"
+import "barmiddle"
+import "barend"
 
 Variants {
     id: root
@@ -16,7 +16,7 @@ Variants {
         id: mainWindow
         required property var modelData
         screen: modelData
-        visible: root.instances.length > 1 ? (modelData.name == "HDMI-A-1" ? true : false) : true
+        visible: true // root.instances.length > 1 ? (modelData.name == "HDMI-A-1" ? true : false) : true
         anchors {
             top: true
             left: true
@@ -25,7 +25,7 @@ Variants {
         implicitHeight: 32
 
         Rectangle {
-            color: ColorsConfig.palette.current.bar_background
+            color: ColorsConfig.palette.bar_background
             anchors.fill: parent
 
             GridLayout { //grid 3 partes iguales
@@ -39,19 +39,17 @@ Variants {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
 
-                    StartPart {}
+                    BarStart {}
                 }
                 Item {
                     id: middle
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    MiddlePart {}
                 }
                 Item {
                     id: end
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    EndPart {}
                 }
             }
         }

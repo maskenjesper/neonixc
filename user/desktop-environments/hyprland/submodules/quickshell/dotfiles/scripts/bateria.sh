@@ -1,4 +1,6 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
+
+echo "4" && exit
 
 bat=/sys/class/power_supply/BAT0/
 per=$(cat $bat/capacity)

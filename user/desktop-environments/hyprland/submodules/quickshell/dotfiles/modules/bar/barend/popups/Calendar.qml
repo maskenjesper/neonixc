@@ -14,7 +14,7 @@ ClippingRectangle {
     // radius: 15
 
     bottomLeftRadius: 25
-    color: ColorsConfig.palette.current.bar_background
+    color: ColorsConfig.palette.bar_background
 
     Column {
         id: column

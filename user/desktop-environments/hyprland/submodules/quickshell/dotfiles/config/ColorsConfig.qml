@@ -1,13 +1,11 @@
 pragma Singleton
 
+import qs.services
 import Quickshell
 import QtQuick
-import qs.services
 
 Singleton {
-    property MyPalette palette: MyPalette {}
+    property MyPalette palette: Colors.debug
 
-    component MyPalette: QtObject {
-        property var current: Colors.darkBluePalette
-    }
 }
+

@@ -10,8 +10,8 @@ Item {
     anchors.fill: parent
     // color: "blue"
 
-    MusicDisplay {
-        visible: Music.players.length > 0
-        anchors.horizontalCenter: root.horizontalCenter
-    }
+    // MusicDisplay {
+    //     visible: Music.players.length > 0
+    //     anchors.horizontalCenter: root.horizontalCenter
+    // }
 }

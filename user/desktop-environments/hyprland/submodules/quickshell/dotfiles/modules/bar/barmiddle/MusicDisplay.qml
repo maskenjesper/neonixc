@@ -10,7 +10,7 @@ ClippingRectangle {
         Math.min(row.width + 50, 500);
     }
     height: parent.height
-    color: ColorsConfig.palette.current.primary_container
+    color: ColorsConfig.palette.primary_container
     anchors.horizontalCenter: parent.horizontalCenter
     radius: 15
 
@@ -29,18 +29,18 @@ ClippingRectangle {
             anchors.rightMargin: 15
             spacing: 10
             StyledText {
-                color: ColorsConfig.palette.current.text
+                color: ColorsConfig.palette.text
                 height: parent.height
                 text: Music.audioMedia.titulo
             }
             StyledText {
-                color: ColorsConfig.palette.current.text
+                color: ColorsConfig.palette.text
                 height: parent.height
                 font.bold: true
                 text: "—"
             }
             StyledText {
-                color: ColorsConfig.palette.current.text
+                color: ColorsConfig.palette.text
                 height: parent.height
                 text: Music.audioMedia.artista
             }

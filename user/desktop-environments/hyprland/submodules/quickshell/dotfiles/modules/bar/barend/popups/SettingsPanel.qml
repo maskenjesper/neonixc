@@ -12,7 +12,7 @@ Rectangle {
 
     bottomLeftRadius: 25
     bottomRightRadius: 25
-    color: ColorsConfig.palette.current.bar_background
+    color: ColorsConfig.palette.bar_background
 
     Column {
         id: column

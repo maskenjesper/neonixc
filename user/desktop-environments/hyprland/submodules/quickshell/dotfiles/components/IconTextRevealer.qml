@@ -18,7 +18,7 @@ Row {
         id: button
         height: root.height
         width: icon.width
-        // color: ColorsConfig.palette.current.empty_ws
+        // color: ColorsConfig.palette.empty_ws
         // radius: 15
 
         MaterialIcon {

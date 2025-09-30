@@ -23,7 +23,7 @@ Item {
         Rectangle {
             width: childWidth
             height: childHeight
-            color: thisIndex == currentIndex ? ColorsConfig.palette.current.secondary_container : ColorsConfig.palette.current.primary_container
+            color: thisIndex == currentIndex ? ColorsConfig.palette.secondary_container : ColorsConfig.palette.current.primary_container
             radius: childRadius
 
             MaterialIcon {
