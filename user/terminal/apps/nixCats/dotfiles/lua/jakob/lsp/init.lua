@@ -47,6 +47,8 @@ servers.hyprls = {}
 
 servers.csharp_ls = {}
 
+servers.qmlls = {}
+
 require("lze").load({
 	{
 		"nvim-lspconfig",
