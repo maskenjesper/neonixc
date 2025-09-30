@@ -17,3 +17,5 @@ swaync &
 # idling
 hypridle &
 
+quickshell
+
