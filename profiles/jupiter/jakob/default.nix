@@ -27,9 +27,6 @@
     obsidian
     cool-retro-term
 
-    qtcreator
-    qt6.full
-
     element-desktop
 
     mission-center
