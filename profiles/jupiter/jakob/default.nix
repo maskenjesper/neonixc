@@ -28,6 +28,7 @@
     cool-retro-term
 
     qtcreator
+    qt6.full
 
     element-desktop
 
