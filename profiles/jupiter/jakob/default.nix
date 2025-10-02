@@ -27,6 +27,8 @@
     obsidian
     cool-retro-term
 
+    gitnr
+
     element-desktop
 
     mission-center

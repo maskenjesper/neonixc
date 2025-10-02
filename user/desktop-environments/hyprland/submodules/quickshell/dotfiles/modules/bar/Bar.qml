@@ -25,9 +25,30 @@ Variants {
         }
         implicitHeight: 40
 
-        Rectangle {
-            color: ColorsConfig.palette.bar_background
+        Item {
             anchors.fill: parent
+
+            Rectangle {
+                anchors.fill: parent
+                color: ColorsConfig.palette.bar_background
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+
+                onWheel: wheelEvent => {
+                    console.log(JSON.stringify(wheelEvent, null, 4))
+
+                    if (wheelEvent.angleDelta.y > 0) {
+                        Hyprland.dispatch("workspace m-1")
+                    } else {
+                        Hyprland.dispatch("workspace m+1")
+                    }
+
+
+                }
+            }
 
             GridLayout { //grid 3 partes iguales
                 id: grid
