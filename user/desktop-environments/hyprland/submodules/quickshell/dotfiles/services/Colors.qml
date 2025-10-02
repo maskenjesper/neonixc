@@ -5,9 +5,9 @@ import QtQuick
 
 Singleton {
     readonly property MyPalette debug: MyPalette {
-        bar_background: "#000000"
-        primary_container: "#ff0000"
-        secondary_container: "#00ff00"
+        bar_background: "#a00000"
+        primary_container: "#00a000"
+        secondary_container: "#0000a0"
         text: "#ffffff"
         slider: "#0000ff"
 
@@ -18,15 +18,15 @@ Singleton {
     }
 
     readonly property MyPalette sand: MyPalette {
-        bar_background: "#0f0f0f"
-        primary_container: "#ff0000"
-        secondary_container: "#00ff00"
+        bar_background: "#0E0E0E"
+        primary_container: "#212121"
+        secondary_container: "#303030"
         text: "#DFD0B8"
         slider: "#DFD0B8"
 
         
-        active_ws: "#DFD0B8"
-        occupied_ws: "#948979"
+        active_ws: "#665C54"
+        occupied_ws: "#272727"
         empty_ws: "#948979"
     }
 

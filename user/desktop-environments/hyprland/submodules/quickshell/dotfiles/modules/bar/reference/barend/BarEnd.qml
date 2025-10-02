@@ -49,7 +49,7 @@ Row {
     //     id: slidersContainer
     //     property bool settingsIsOpen: false
     //
-    //     color: ColorsConfig.palette.primary_container
+    //     color: ColorsConfig.palette.bar_background
     //     height: parent.height
     //
     //     width: sliders.implicitWidth + 30
@@ -78,7 +78,7 @@ Row {
     //                 id: settingsPanel
     //                 required property var modelData
     //                 screen: modelData
-    //                 visible: root.instances.length > 1 ? (modelData.name == "HDMI-A-1" ? true : false) : true
+    //                 visible: true // root.instances.length > 1 ? (modelData.name == "HDMI-A-1" ? true : false) : true
     //                 anchors.top: true
     //                 anchors.right: true
     //                 exclusiveZone: 0

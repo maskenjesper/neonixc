@@ -5,7 +5,6 @@ import Quickshell
 import QtQuick
 
 Singleton {
-    property MyPalette palette: Colors.debug
-
+    property MyPalette palette: Colors.sand
 }
 

@@ -1,12 +1,12 @@
+pragma ComponentBehavior: Bound
+
 import Quickshell
-import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
 import qs.config
-import qs.components
-import "barstart"
-import "barmiddle"
-import "barend"
+import "components/workspaces"
+import Quickshell.Hyprland
+import QtQuick.Controls
 
 Variants {
     id: root
@@ -21,8 +21,9 @@ Variants {
             top: true
             left: true
             right: true
+            //bottom: true
         }
-        implicitHeight: 32
+        implicitHeight: 40
 
         Rectangle {
             color: ColorsConfig.palette.bar_background
@@ -34,22 +35,98 @@ Variants {
                 columns: 3
                 rows: 1
                 columnSpacing: 0
-                Item {
-                    id: start
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
 
-                    BarStart {}
-                }
+                // Start part
                 Item {
-                    id: middle
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
+                    Layout.preferredWidth: parent.width / 3
+                    Layout.preferredHeight: parent.height
+                    Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
+
+
+                    RowLayout {
+                        spacing: 12
+                        anchors.fill: parent
+
+                        // Nested RowLayout
+                        RowLayout {
+                            id: workspaces
+                            readonly property HyprlandMonitor currentScreen: Hyprland.monitorFor(workspaces.QsWindow.window?.screen)
+                            Layout.leftMargin: 10
+                            Layout.rightMargin: 10
+                            spacing: 5
+
+                            Repeater {
+                                model: Hyprland.workspaces
+
+                                Item {
+                                    id: workspacewidget
+                                    required property HyprlandWorkspace modelData
+
+                                    width: childrenRect.width
+                                    height: childrenRect.height
+                                    visible: modelData.monitor?.id === workspaces.currentScreen?.id
+
+                                    Rectangle {
+                                        id: workspacewidgetbox
+                                        width: 30
+                                        height: 30
+                                        color: workspacewidget.modelData.active ? ColorsConfig.palette.active_ws : ColorsConfig.palette.occupied_ws
+                                        radius: workspacewidget.modelData.active ? 10 : 15
+
+
+                                        MouseArea {
+                                            anchors.fill: parent
+                                            cursorShape: Qt.PointingHandCursor
+                                            onClicked: event => {
+                                                if (Hyprland.focusedWorkspace.id !== workspacewidget.modelData.id) {
+                                                    workspacewidget.modelData.activate()
+                                                }
+                                            }
+                                        }
+
+                                        RowLayout {
+                                            anchors.fill: parent
+
+                                            Text {
+                                                Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+
+                                                color: ColorsConfig.palette.text
+
+                                                font.pointSize: 12
+                                                text: workspacewidget.modelData.name
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
+
+                // Middle part
                 Item {
-                    id: end
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
+                    Layout.preferredWidth: parent.width / 3
+                    Layout.preferredHeight: parent.height
+                    Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+
+                    }
+                }
+                // End part
+                Item {
+                    Layout.preferredWidth: parent.width / 3
+                    Layout.preferredHeight: parent.height
+                    Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+
+                    }
                 }
             }
         }

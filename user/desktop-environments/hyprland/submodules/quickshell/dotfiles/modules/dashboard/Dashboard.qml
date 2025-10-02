@@ -15,7 +15,7 @@ Variants {
         id: panelDash
         required property var modelData
         screen: modelData
-        visible: root.instances.length > 1 ? (modelData.name == "eDP-1" ? true : false) : false
+        visible: true// root.instances.length > 1 ? (modelData.name == "eDP-1" ? true : false) : false
         anchors.top: true
         anchors.right: true
         exclusiveZone: 0
