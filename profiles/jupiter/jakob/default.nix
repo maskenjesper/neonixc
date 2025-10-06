@@ -2,6 +2,7 @@
 {
   imports = [
     ../../../user/common
+    ../../../user/desktop-environments/hyprland
     ../../../user/terminal/apps/nixCats
     ../../../user/terminal/apps/tmux
     ../../../user/terminal/apps/git
@@ -9,7 +10,6 @@
     ../../../user/terminal/apps/direnv
     ../../../user/terminal/emulators/kitty
     ../../../user/terminal/shells/fish
-    ../../../user/desktop-environments/hyprland
     ../../../user/apps/zen-browser
   ];
 

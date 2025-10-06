@@ -5,7 +5,7 @@
 }: {
 
   home.file.".config/waybar" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/neonixc/user/desktop-environments/hyprland/submodules/waybar/dotfiles";
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/neonixc/user/desktop-environments/common/waybar/dotfiles";
     recursive = true;
   };
 }
