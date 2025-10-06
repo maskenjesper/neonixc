@@ -3,7 +3,8 @@
     ./hardware-configuration.nix 
 
     ../../system/common
-    ../../system/desktop-environments/variations/hyprland-v1
+    ../../system/desktop-environments/hyprland
+    ../../system/desktop-environments/niri
     ../../system/apps/_1password
     ../../system/apps/teamviewer
     ../../system/features/adb
