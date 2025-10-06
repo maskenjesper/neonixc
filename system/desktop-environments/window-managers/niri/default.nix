@@ -1,12 +1,4 @@
 { pkgs, ... }: {
-  imports = [
-    ../../system-utils/stylix
-    ../../system-utils/audio
-    ../../system-utils/printing
-    ../../system-utils/bluetooth
-    ../../system-utils/disks
-    ../../../apps/dolphin
-  ];
 
   programs.niri = {
       enable = true;
