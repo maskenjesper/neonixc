@@ -4,26 +4,50 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 import Quickshell.Hyprland
+import qs.config
 
-RowLayout {
+Item {
     id: root
-    readonly property HyprlandMonitor currentScreen: Hyprland.monitorFor(root.QsWindow.window?.screen)
 
-    spacing: 10
+    readonly property HyprlandMonitor monitor: Hyprland.monitorFor(root.QsWindow.window?.screen)
+    property alias showBackground: background.visible
 
-    Repeater {
-        model: Hyprland.workspaces
+    implicitHeight: 30
+    implicitWidth: row.implicitWidth + 2 * row.anchors.margins
 
-        Item {
-            id: widget
-            required property HyprlandWorkspace modelData
+    Rectangle {
+        id: background
 
-            visible: widget.modelData.monitor?.id === root.currentScreen?.id
-            width: 30
-            Layout.fillHeight: true
+        anchors.fill: parent
+        color: ColorsConfig.palette.primary_container
+        radius: height / 2
+        visible: false
+    }
 
-            WorkspaceWidget {
-                workspace: widget.modelData
+    RowLayout {
+        id: row
+
+        anchors {
+            top: parent.top
+            bottom: parent.bottom
+            left: parent.left
+            margins: 2
+        }
+
+        spacing: 5
+
+        Repeater {
+            model: Hyprland.workspaces
+
+            WorkspaceButton {
+                required property HyprlandWorkspace modelData
+
+                visible: root.monitor?.id === modelData.monitor?.id
+
+                Layout.fillHeight: true
+
+                workspace: modelData
+                showBackground: true
             }
         }
     }
