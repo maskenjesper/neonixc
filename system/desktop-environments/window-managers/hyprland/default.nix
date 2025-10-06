@@ -1,12 +1,12 @@
 { pkgs, ... }: {
   imports = [
-    ./submodules/stylix
-    ./submodules/audio
-    ./submodules/printing
-    ./submodules/bluetooth
-    ./submodules/disks
-    ./submodules/quickshell
-    ../../apps/dolphin
+    ../../system-utils/stylix
+    ../../system-utils/audio
+    ../../system-utils/printing
+    ../../system-utils/bluetooth
+    ../../system-utils/disks
+    ../../shells/quickshell
+    ../../../apps/dolphin
   ];
 
   #programs.uwsm = {

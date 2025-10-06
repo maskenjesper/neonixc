@@ -3,7 +3,7 @@
     ./hardware-configuration.nix 
 
     ../../system/common
-    ../../system/desktop-environments/hyprland
+    ../../system/desktop-environments/window-managers/hyprland
     ../../system/apps/_1password
     ../../system/apps/teamviewer
     ../../system/features/adb
@@ -41,7 +41,6 @@
     ];
   };
   programs.fish.enable = true;
-  programs.niri.enable = true;
 
 
   environment.systemPackages = with pkgs; [
