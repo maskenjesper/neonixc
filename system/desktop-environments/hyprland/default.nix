@@ -6,7 +6,7 @@
     ../common/system-utils/printing
     ../common/system-utils/bluetooth
     ../common/system-utils/disks
-    ../common/shells/quickshell
+    ../common/shells/quickshell-hyprland
     ../../apps/dolphin
   ];
 
