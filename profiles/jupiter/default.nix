@@ -20,6 +20,11 @@
 
   networking.hostName = "jupiter"; # Define your hostname.
 
+  # disable kernel messages in the console (tty)
+  boot.kernel.sysctl = {
+    "kernel.printk" = "3 3 3 3";
+  };
+
   syncthing = {
       devices = {
         "phone" = { id = "3Y7HXLU-57OAFNZ-MO5PJ2T-PY7MOPA-U6RHHGF-4BUQEGX-7JRNZBZ-Q4CAAAP"; };
