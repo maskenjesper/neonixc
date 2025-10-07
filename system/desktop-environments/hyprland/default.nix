@@ -47,6 +47,7 @@
   environment.systemPackages = with pkgs; [
     where-is-my-sddm-theme 
 
+    greetd.qtgreet
 
   ];
 }
