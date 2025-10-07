@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland --config /home/jakob/.config/hypr/hyprland.conf";
+        command = "agreety --cmd Hyprland";
       };
     };
   };
