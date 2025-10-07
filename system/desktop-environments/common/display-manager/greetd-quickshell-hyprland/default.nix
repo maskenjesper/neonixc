@@ -2,11 +2,11 @@
 {
   services.greetd = {
     enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.hyprland}/bin/hyprland";
-      };
-    };
+    # settings = {
+    #   default_session = {
+    #     command = "${pkgs.hyprland}/bin/hyprland";
+    #   };
+    # };
   };
 
   environment.etc."greetd/environments".text = ''
