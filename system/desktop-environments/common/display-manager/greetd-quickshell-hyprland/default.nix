@@ -10,7 +10,7 @@
   };
 
   environment.etc."greetd/environments".text = ''
-    hyprland
+    Hyprland
     fish
     bash
   '';
