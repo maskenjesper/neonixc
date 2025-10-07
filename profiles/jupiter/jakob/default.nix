@@ -28,6 +28,8 @@
     cool-retro-term
 
     cmatrix
+    xaos
+    electricsheep
 
     gitnr
 
