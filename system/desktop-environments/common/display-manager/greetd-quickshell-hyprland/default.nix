@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "agreety --cmd Hyprland";
+        command = "${pkgs.cage}/bin/cage -s -- ${pkgs.greetd.gtkgreet}/bin/gtkgreet";
       };
     };
   };
