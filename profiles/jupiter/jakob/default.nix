@@ -27,6 +27,8 @@
     obsidian
     cool-retro-term
 
+    cmatrix
+
     gitnr
 
     element-desktop
