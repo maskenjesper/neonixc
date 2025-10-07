@@ -21,7 +21,7 @@ in
   };
 
   environment.etc."greetd/environments".text = ''
-    hyprland-uwsm
+    uwsm start default
     fish
     bash
   '';
