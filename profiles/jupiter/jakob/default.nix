@@ -32,6 +32,8 @@
     electricsheep
 
     freecad-wayland
+    openscad-lsp
+    openscad
 
     gitnr
 
