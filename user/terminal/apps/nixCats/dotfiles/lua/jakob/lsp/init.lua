@@ -49,6 +49,8 @@ servers.csharp_ls = {}
 
 servers.qmlls = {}
 
+servers.openscad_ls = {}
+
 require("lze").load({
 	{
 		"nvim-lspconfig",

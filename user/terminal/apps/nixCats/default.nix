@@ -56,6 +56,8 @@ in {
         csharp-ls
 
         kdePackages.qtdeclarative
+
+        openscad-lsp
       ];
 
       startupPlugins.general = with pkgs.vimPlugins; [
