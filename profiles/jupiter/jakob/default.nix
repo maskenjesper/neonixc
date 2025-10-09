@@ -31,6 +31,8 @@
     xaos
     electricsheep
 
+    freecad-wayland
+
     gitnr
 
     element-desktop
