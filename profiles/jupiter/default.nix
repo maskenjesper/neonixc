@@ -35,8 +35,8 @@
         "voyager" = { id = "NGB3ZV7-5TUJBHD-S4G55WQ-GB2IJKU-T27F57R-KYUUW6O-ABBPROL-WXS3WAW"; };
         "rpi" = { id = ""; };
       };
-      passwords.devices = [ "phone" "rpi" ];
-      second-brain.devices = [ "phone" "rpi" ];
+      passwords.devices = [ "phone" "voyager" "rpi" ];
+      second-brain.devices = [ "phone" "voyager" "rpi" ];
   };
 
   nix.settings.download-buffer-size = 1048576000; # 1GB 
