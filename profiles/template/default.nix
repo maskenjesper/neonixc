@@ -3,6 +3,8 @@
     ./hardware-configuration.nix 
 
     ../../system/common
+    ../../system/hardware/keyboard/keymap
+    ../../system/hardware/keyboard/xremap
   ];
 
   networking.hostName = "hostname"; # Define your hostname.

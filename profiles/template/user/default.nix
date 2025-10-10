@@ -2,6 +2,11 @@
 {
   imports = [
     ../../../user/common
+    ../../../user/terminal/shells/fish
+    ../../../user/terminal/apps/tmux
+    ../../../user/terminal/apps/git
+    ../../../user/terminal/apps/gh
+    ../../../user/terminal/apps/nixCats
   ];
 
   home.username = "user";
