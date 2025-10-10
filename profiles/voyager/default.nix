@@ -18,7 +18,7 @@
   syncthing = {
       devices = {
         "phone" = { id = "3Y7HXLU-57OAFNZ-MO5PJ2T-PY7MOPA-U6RHHGF-4BUQEGX-7JRNZBZ-Q4CAAAP"; };
-        "desktop" = { id = "OJSGLW5-KQGAFU7-P2QBGSB-43EFXKE-LTN6NKO-BWAGK2J-KMDS7QG-F3WENAA"; };
+        "jupiter" = { id = "OJSGLW5-KQGAFU7-P2QBGSB-43EFXKE-LTN6NKO-BWAGK2J-KMDS7QG-F3WENAA"; };
         "rpi" = { id = ""; };
       };
       passwords.devices = [ "phone" "rpi" ];
