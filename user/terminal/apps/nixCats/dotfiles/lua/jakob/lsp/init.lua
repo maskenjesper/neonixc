@@ -49,7 +49,7 @@ servers.csharp_ls = {}
 
 servers.qmlls = {}
 
-servers.openscad_ls = {}
+servers.openscad_lsp = {}
 
 require("lze").load({
 	{
