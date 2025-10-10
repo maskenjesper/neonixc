@@ -21,8 +21,8 @@
         "jupiter" = { id = "OJSGLW5-KQGAFU7-P2QBGSB-43EFXKE-LTN6NKO-BWAGK2J-KMDS7QG-F3WENAA"; };
         "rpi" = { id = ""; };
       };
-      passwords.devices = [ "phone" "rpi" ];
-      second-brain.devices = [ "phone" "rpi" ];
+      passwords.devices = [ "phone" "jupiter" "rpi" ];
+      second-brain.devices = [ "phone" "jupiter" "rpi" ];
   };
 
   nix.settings.download-buffer-size = 1048576000; # 1GB 
