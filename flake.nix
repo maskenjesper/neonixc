@@ -88,21 +88,21 @@
     # });
 
     nixosConfigurations = {
-      tellus = lib.nixosSystem {
-        modules = [./profiles/tellus];
-        specialArgs = {
-          inherit inputs outputs; 
-          localUsers = ["jakob"];
-        };
-      };
-
-      rpi = lib.nixosSystem {
-        modules = [./profiles/rpi];
-        specialArgs = {
-            inherit inputs outputs;
-            localUsers = ["jakob"];
-        };
-      };
+      # tellus = lib.nixosSystem {
+      #   modules = [./profiles/tellus];
+      #   specialArgs = {
+      #     inherit inputs outputs; 
+      #     localUsers = ["jakob"];
+      #   };
+      # };
+      #
+      # rpi = lib.nixosSystem {
+      #   modules = [./profiles/rpi];
+      #   specialArgs = {
+      #       inherit inputs outputs;
+      #       localUsers = ["jakob"];
+      #   };
+      # };
 
       jupiter = lib.nixosSystem {
         modules = [./profiles/jupiter];
@@ -112,27 +112,27 @@
         };
       };
 
-      voyager = lib.nixosSystem {
-        modules = [./profiles/voyager];
-        specialArgs = {
-          inherit inputs outputs; 
-          localUsers = ["jakob"];
-        };
-      };
+      # voyager = lib.nixosSystem {
+      #   modules = [./profiles/voyager];
+      #   specialArgs = {
+      #     inherit inputs outputs; 
+      #     localUsers = ["jakob"];
+      #   };
+      # };
     };
 
     homeConfigurations = {
-      "jakob@tellus" = inputs.home-manager.lib.homeManagerConfiguration {
-        modules = [./profiles/tellus/jakob ./tasks];
-        pkgs = pkgsFor.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-      };
-
-      "jakob@rpi" = inputs.home-manager.lib.homeManagerConfiguration {
-        modules = [./profiles/rpi/jakob ./tasks];
-        pkgs = pkgsFor.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-      };
+      # "jakob@tellus" = inputs.home-manager.lib.homeManagerConfiguration {
+      #   modules = [./profiles/tellus/jakob ./tasks];
+      #   pkgs = pkgsFor.x86_64-linux;
+      #   extraSpecialArgs = {inherit inputs outputs;};
+      # };
+      #
+      # "jakob@rpi" = inputs.home-manager.lib.homeManagerConfiguration {
+      #   modules = [./profiles/rpi/jakob ./tasks];
+      #   pkgs = pkgsFor.x86_64-linux;
+      #   extraSpecialArgs = {inherit inputs outputs;};
+      # };
 
       "jakob@jupiter" = inputs.home-manager.lib.homeManagerConfiguration {
         modules = [./profiles/jupiter/jakob ./tasks];
@@ -140,11 +140,11 @@
         extraSpecialArgs = {inherit inputs outputs;};
       };
 
-      "jakob@voyager" = inputs.home-manager.lib.homeManagerConfiguration {
-        modules = [./profiles/voyager/jakob ./tasks];
-        pkgs = pkgsFor.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-      };
+      # "jakob@voyager" = inputs.home-manager.lib.homeManagerConfiguration {
+      #   modules = [./profiles/voyager/jakob ./tasks];
+      #   pkgs = pkgsFor.x86_64-linux;
+      #   extraSpecialArgs = {inherit inputs outputs;};
+      # };
     };
   };
 }
