@@ -64,28 +64,28 @@
 
   in {
     inherit lib;
-    formatter = forEachSystem (pkgs: pkgs.alejandra);
-
-    packages = forAllSystems (system:
-      let pkgs = nixpkgsFor.${system};
-      in {
-        default = self.packages.${system}.install;
-
-        install = pkgs.writeShellApplication {
-          name = "install";
-          runtimeInputs = with pkgs; [ git inputs.home-manager.packages.${system}.home-manager ];
-          text = ''${./assets/scripts/install.sh} "$@"'';
-        };
-      });
-
-    apps = forAllSystems (system: {
-      default = self.apps.${system}.install;
-
-      install = {
-        type = "app";
-        program = "${self.packages.${system}.install}/bin/install";
-      };
-    });
+    # formatter = forEachSystem (pkgs: pkgs.alejandra);
+    #
+    # packages = forAllSystems (system:
+    #   let pkgs = nixpkgsFor.${system};
+    #   in {
+    #     default = self.packages.${system}.install;
+    #
+    #     install = pkgs.writeShellApplication {
+    #       name = "install";
+    #       runtimeInputs = with pkgs; [ git inputs.home-manager.packages.${system}.home-manager ];
+    #       text = ''${./assets/scripts/install.sh} "$@"'';
+    #     };
+    #   });
+    #
+    # apps = forAllSystems (system: {
+    #   default = self.apps.${system}.install;
+    #
+    #   install = {
+    #     type = "app";
+    #     program = "${self.packages.${system}.install}/bin/install";
+    #   };
+    # });
 
     nixosConfigurations = {
       tellus = lib.nixosSystem {
