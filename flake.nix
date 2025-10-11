@@ -35,39 +35,60 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs: let
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+  # outputs = inputs: let
+  #
+  #   lib = inputs.nixpkgs.lib // inputs.home-manager.lib;
+  #
+  #   systems = ["x86_64-linux"];
+  #
+  #   pkgsFor = lib.genAttrs systems (
+  #     system:
+  #       import inputs.nixpkgs {
+  #         inherit system;
+  #         config.allowUnfree = true;
+  #       }
+  #   );
+  #
+  # in {
+  #   inherit lib;
+    imports = [
 
-    lib = inputs.nixpkgs.lib // inputs.home-manager.lib;
+    ];
 
-    systems = ["x86_64-linux"];
+    systems = [
+        "x86_64-linux"
+    ];
 
-    pkgsFor = lib.genAttrs systems (
-      system:
-        import inputs.nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        }
-    );
-
-  in {
-    inherit lib;
-
-    nixosConfigurations = {
-      jupiter = lib.nixosSystem {
-        modules = [./profiles/jupiter];
-        specialArgs = {
-          inherit inputs; 
-          localUsers = ["jakob"];
-        };
-      };
+    perSystem = {...}: {
+    
     };
 
-    homeConfigurations = {
-      "jakob@jupiter" = inputs.home-manager.lib.homeManagerConfiguration {
-        modules = [./profiles/jupiter/jakob ./tasks];
-        pkgs = pkgsFor.x86_64-linux;
-        extraSpecialArgs = {inherit inputs;};
-      };
+    flake = {
+        nixosConfigurations = {
+          jupiter = inputs.nixpkgs.lib.nixosSystem {
+            modules = [./profiles/jupiter];
+            specialArgs = {
+              inherit inputs; 
+              localUsers = ["jakob"];
+            };
+          };
+        };
+
+        homeConfigurations = {
+          "jakob@jupiter" = inputs.home-manager.lib.homeManagerConfiguration {
+            modules = [./profiles/jupiter/jakob ./tasks];
+            pkgs = (inputs.nixpkgs.lib.genAttrs [ "x86_64-linux" ] (
+              system:
+                import inputs.nixpkgs {
+                  inherit system;
+                  config.allowUnfree = true;
+                }
+            )).x86_64-linux;
+
+            extraSpecialArgs = {inherit inputs;};
+          };
+        };
     };
   };
 }
