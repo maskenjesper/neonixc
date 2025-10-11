@@ -2,7 +2,8 @@
   pkgs,
   config,
   ...
-}: let
+}:
+let
   tmux-super-fingers =
     pkgs.tmuxPlugins.mkTmuxPlugin
     {
