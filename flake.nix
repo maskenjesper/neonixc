@@ -35,19 +35,15 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = {
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
+  outputs = inputs: let
 
-    lib = nixpkgs.lib // home-manager.lib;
+    lib = inputs.nixpkgs.lib // inputs.home-manager.lib;
 
     systems = ["x86_64-linux"];
 
     pkgsFor = lib.genAttrs systems (
       system:
-        import nixpkgs {
+        import inputs.nixpkgs {
           inherit system;
           config.allowUnfree = true;
         }
