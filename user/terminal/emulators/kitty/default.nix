@@ -1,7 +1,6 @@
 {
   pkgs,
   config,
-  outputs,
   ...
 }: {
   home.file.".config/kitty" = {

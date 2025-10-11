@@ -36,13 +36,10 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     home-manager,
     ...
   } @ inputs: let
-
-    inherit (self) outputs;
 
     lib = nixpkgs.lib // home-manager.lib;
 
@@ -63,7 +60,7 @@
       jupiter = lib.nixosSystem {
         modules = [./profiles/jupiter];
         specialArgs = {
-          inherit inputs outputs; 
+          inherit inputs; 
           localUsers = ["jakob"];
         };
       };
@@ -73,7 +70,7 @@
       "jakob@jupiter" = inputs.home-manager.lib.homeManagerConfiguration {
         modules = [./profiles/jupiter/jakob ./tasks];
         pkgs = pkgsFor.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
+        extraSpecialArgs = {inherit inputs;};
       };
     };
   };
