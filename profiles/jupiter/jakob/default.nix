@@ -27,6 +27,8 @@
     obsidian
     cool-retro-term
 
+    alejandra
+
     cmatrix
     xaos
     electricsheep
