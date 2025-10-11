@@ -59,36 +59,36 @@
     in 
     flake-parts.lib.mkFlake { inherit inputs; }
     {
+        imports = [
+
+        ];
+
         systems = [ "x86_64-linux" ];
 
-        perSystem = { pkgs, ... }: {
+        perSystem = { pkgs, self', system, inputs', ... }: {
+
+          packages = {
+            default = self'.packages.install;
+
+            install = pkgs.writeShellApplication {
+              name = "install";
+              runtimeInputs = with pkgs; [ git inputs'.home-manager.packages.${system}.home-manager ];
+              text = ''${.assets/scripts/install.sh} "$@"'';
+            };
+          };
+
+          apps = {
+            default = self'.apps.install;
+            
+            install = {
+              type = "app";
+              program = "${self'.packages.install}/bin/install";
+            };
+          };
+
+          formatter = pkgs.alejandra;
 
         };
- 
-
-
-    # formatter = forEachSystem (pkgs: pkgs.alejandra);
-    #
-    # packages = forAllSystems (system:
-    #   let pkgs = nixpkgsFor.${system};
-    #   in {
-    #     default = self.packages.${system}.install;
-    #
-    #     install = pkgs.writeShellApplication {
-    #       name = "install";
-    #       runtimeInputs = with pkgs; [ git inputs.home-manager.packages.${system}.home-manager ];
-    #       text = ''${./assets/scripts/install.sh} "$@"'';
-    #     };
-    #   });
-    #
-    # apps = forAllSystems (system: {
-    #   default = self.apps.${system}.install;
-    #
-    #   install = {
-    #     type = "app";
-    #     program = "${self.packages.${system}.install}/bin/install";
-    #   };
-    # });
 
         flake = {
       
