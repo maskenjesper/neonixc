@@ -31,64 +31,127 @@
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-  # outputs = inputs: let
-  #
-  #   lib = inputs.nixpkgs.lib // inputs.home-manager.lib;
-  #
-  #   systems = ["x86_64-linux"];
-  #
-  #   pkgsFor = lib.genAttrs systems (
-  #     system:
-  #       import inputs.nixpkgs {
-  #         inherit system;
-  #         config.allowUnfree = true;
-  #       }
-  #   );
-  #
-  # in {
-  #   inherit lib;
-    imports = [
+  outputs = inputs @ { flake-parts, nixpkgs, home-manager, self, ... }: let
 
-    ];
+      inherit (self) outputs;
 
-    systems = [
-        "x86_64-linux"
-    ];
+      lib = nixpkgs.lib // home-manager.lib;
 
-    perSystem = {...}: {
-    
-    };
+      systems = ["x86_64-linux"];
 
-    flake = {
-        nixosConfigurations = {
-          jupiter = inputs.nixpkgs.lib.nixosSystem {
-            modules = [./profiles/jupiter];
-            specialArgs = {
-              inherit inputs; 
-              localUsers = ["jakob"];
+      forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
+
+      forAllSystems = inputs.nixpkgs.lib.genAttrs systems;
+      nixpkgsFor =
+        forAllSystems (system: import inputs.nixpkgs { inherit system; });
+
+      pkgsFor = lib.genAttrs systems (
+        system:
+          import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          }
+      );
+
+    in 
+    flake-parts.lib.mkFlake { inherit inputs; }
+    {
+        systems = [ "x86_64-linux" ];
+
+        perSystem = { pkgs, ... }: {
+
+        };
+ 
+
+
+    # formatter = forEachSystem (pkgs: pkgs.alejandra);
+    #
+    # packages = forAllSystems (system:
+    #   let pkgs = nixpkgsFor.${system};
+    #   in {
+    #     default = self.packages.${system}.install;
+    #
+    #     install = pkgs.writeShellApplication {
+    #       name = "install";
+    #       runtimeInputs = with pkgs; [ git inputs.home-manager.packages.${system}.home-manager ];
+    #       text = ''${./assets/scripts/install.sh} "$@"'';
+    #     };
+    #   });
+    #
+    # apps = forAllSystems (system: {
+    #   default = self.apps.${system}.install;
+    #
+    #   install = {
+    #     type = "app";
+    #     program = "${self.packages.${system}.install}/bin/install";
+    #   };
+    # });
+
+        flake = {
+      
+          nixosConfigurations = {
+            tellus = lib.nixosSystem {
+              modules = [./profiles/tellus];
+              specialArgs = {
+                inherit inputs outputs; 
+                localUsers = ["jakob"];
+              };
+            };
+      
+            rpi = lib.nixosSystem {
+              modules = [./profiles/rpi];
+              specialArgs = {
+                  inherit inputs outputs;
+                  localUsers = ["jakob"];
+              };
+            };
+      
+            jupiter = lib.nixosSystem {
+              modules = [./profiles/jupiter];
+              specialArgs = {
+                inherit inputs outputs; 
+                localUsers = ["jakob"];
+              };
+            };
+      
+            voyager = lib.nixosSystem {
+              modules = [./profiles/voyager];
+              specialArgs = {
+                inherit inputs outputs; 
+                localUsers = ["jakob"];
+              };
+            };
+          };
+      
+          homeConfigurations = {
+            "jakob@tellus" = inputs.home-manager.lib.homeManagerConfiguration {
+              modules = [./profiles/tellus/jakob ./tasks];
+              pkgs = pkgsFor.x86_64-linux;
+              extraSpecialArgs = {inherit inputs outputs;};
+            };
+      
+            "jakob@rpi" = inputs.home-manager.lib.homeManagerConfiguration {
+              modules = [./profiles/rpi/jakob ./tasks];
+              pkgs = pkgsFor.x86_64-linux;
+              extraSpecialArgs = {inherit inputs outputs;};
+            };
+      
+            "jakob@jupiter" = inputs.home-manager.lib.homeManagerConfiguration {
+              modules = [./profiles/jupiter/jakob ./tasks];
+              pkgs = pkgsFor.x86_64-linux;
+              extraSpecialArgs = {inherit inputs outputs;};
+            };
+      
+            "jakob@voyager" = inputs.home-manager.lib.homeManagerConfiguration {
+              modules = [./profiles/voyager/jakob ./tasks];
+              pkgs = pkgsFor.x86_64-linux;
+              extraSpecialArgs = {inherit inputs outputs;};
             };
           };
         };
 
-        homeConfigurations = {
-          "jakob@jupiter" = inputs.home-manager.lib.homeManagerConfiguration {
-            modules = [./profiles/jupiter/jakob ./tasks];
-            pkgs = (inputs.nixpkgs.lib.genAttrs [ "x86_64-linux" ] (
-              system:
-                import inputs.nixpkgs {
-                  inherit system;
-                  config.allowUnfree = true;
-                }
-            )).x86_64-linux;
-
-            extraSpecialArgs = {inherit inputs;};
-          };
-        };
-    };
   };
 }
