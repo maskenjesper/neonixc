@@ -9,6 +9,7 @@
 
     ../../modules/terminal/apps/hello/nixos
     ../../modules/desktop-environments/hyprland/nixos
+    ../../modules/desktop-environments/common/nixos
     ../../modules/apps/_1password/nixos
     ../../modules/apps/teamviewer/nixos
     ../../modules/features/adb/nixos

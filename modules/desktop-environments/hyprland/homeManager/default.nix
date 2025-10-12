@@ -5,9 +5,8 @@
 }: {
   imports = [
     ../../common/waybar/homeManager
-    ../../common/wofi/homeManager
-    ../../common/stylix/homeManager
     ../../common/quickshell/homeManager
+    ../../common/homeManager
   ];
 
   home.file.".config/hypr" = {
@@ -19,8 +18,6 @@
   wayland.windowManager.hyprland.systemd.enable = false;
 
   home.packages = with pkgs; [
-
-
     networkmanagerapplet
     gucharmap
     alarm-clock-applet
@@ -56,7 +53,7 @@
     wl-clipboard
     cliphist
 
-#####################
+    #####################
     # Disk usage analyzer
     baobab
 
