@@ -72,6 +72,7 @@ in {
       ];
 
       optionalPlugins.general = with pkgs.vimPlugins; [
+        vim-sleuth
         zen-mode-nvim
 
         hologram-nvim

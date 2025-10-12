@@ -101,40 +101,6 @@
       };
 
       flake = {
-        # nixosConfigurations = {
-        #   tellus = lib.nixosSystem {
-        #     modules = [./profiles/tellus];
-        #     specialArgs = {
-        #       inherit inputs outputs;
-        #       localUsers = ["jakob"];
-        #     };
-        #   };
-        #
-        #   rpi = lib.nixosSystem {
-        #     modules = [./profiles/rpi];
-        #     specialArgs = {
-        #       inherit inputs outputs;
-        #       localUsers = ["jakob"];
-        #     };
-        #   };
-        #
-        #   jupiter = lib.nixosSystem {
-        #     modules = [./profiles/jupiter];
-        #     specialArgs = {
-        #       inherit inputs outputs;
-        #       localUsers = ["jakob"];
-        #     };
-        #   };
-        #
-        #   voyager = lib.nixosSystem {
-        #     modules = [./profiles/voyager];
-        #     specialArgs = {
-        #       inherit inputs outputs;
-        #       localUsers = ["jakob"];
-        #     };
-        #   };
-        # };
-
         homeConfigurations = {
           "jakob@tellus" = inputs.home-manager.lib.homeManagerConfiguration {
             modules = [./profiles/tellus/jakob ./tasks];

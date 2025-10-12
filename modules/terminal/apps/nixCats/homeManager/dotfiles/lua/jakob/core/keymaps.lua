@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 
 -- Source file in buffer
-vim.keymap.set("n", "<leader>ss", ":% source<CR>")
+vim.keymap.set("n", "<leader>sf", ":% source<CR>")
 
 -- Save and quit
 vim.keymap.set("n", "<leader>w", vim.cmd.wa)
@@ -14,10 +14,10 @@ vim.keymap.set("n", "<C-e>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Copy pasting --
 -- Use the plus register so that the system clipboard is accessed
-vim.keymap.set("n", "y", "y")
-vim.keymap.set("v", "y", "y")
-vim.keymap.set("n", "p", "p")
-vim.keymap.set("v", "p", "p")
+-- vim.keymap.set("n", "y", "y")
+-- vim.keymap.set("v", "y", "y")
+-- vim.keymap.set("n", "p", "p")
+-- vim.keymap.set("v", "p", "p")
 -- Copy/Paste normally
 vim.keymap.set("n", "<C-y>", '"+y')
 vim.keymap.set("v", "<C-y>", '"+y')
@@ -29,7 +29,7 @@ vim.keymap.set("v", "<C-p>", '"+p')
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- buffer management
-vim.keymap.set("n", "<leader>bb", ":ls<CR>", { desc = "Show buffer stack" })
+vim.keymap.set("n", "<leader>bs", ":ls<CR>", { desc = "Show buffer stack" })
 vim.keymap.set("n", "<leader>bj", ":bnext<CR>", { desc = "Goto next buffer" })
 vim.keymap.set("n", "<leader>bk", ":bprev<CR>", { desc = "Goto prev buffer" })
 vim.keymap.set("n", "<leader>bh", ":e #<CR>", { desc = "Toggle prev buffer" })
