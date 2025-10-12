@@ -17,7 +17,6 @@
 bind \cj down-or-search
 bind \ck up-or-search
 
-
 bind \co lfcd
 
 bind \ce tmux-sessionizer
@@ -27,7 +26,7 @@ bind \cr 'tmux-sessionizer $HOME'
 function sux
     # use argument as path
     set x (systemctl status xremap | grep -c running)
-    if test $x -eq 1 
+    if test $x -eq 1
         sudo systemctl stop xremap
     else
         sudo systemctl start xremap
@@ -35,7 +34,7 @@ function sux
 end
 
 function dallow
-    direnv allow 
+    direnv allow
 end
 
 function me
@@ -49,9 +48,6 @@ function mr
 end
 
 function vv
-    vim .
-end
-function vt
     tvim .
 end
 

@@ -23,6 +23,7 @@ in {
       lspsAndRuntimeDeps.general = with pkgs; [
         universal-ctags
         ripgrep
+        
         fd
         zoxide
         fzf
