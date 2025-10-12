@@ -23,8 +23,6 @@
     ../../modules/services/openrgb/nixos
   ];
 
-  # evalClass = "nixos";
-
   networking.hostName = "jupiter"; # Define your hostname.
 
   # Disable kernel messages in the console (tty)

@@ -18,8 +18,6 @@
     ../../../modules/apps/zen-browser/homeManager
   ];
 
-  # evalClass = "homeManager";
-
   home.username = "jakob";
   home.homeDirectory = "/home/jakob";
 
