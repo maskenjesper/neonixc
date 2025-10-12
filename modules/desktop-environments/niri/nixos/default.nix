@@ -1,13 +1,13 @@
 { pkgs, ... }: {
 
   imports = [
-    ../common/system-utils/stylix
-    ../common/system-utils/audio
-    ../common/system-utils/printing
-    ../common/system-utils/bluetooth
-    ../common/system-utils/disks
-    ../common/shells/quickshell
-    ../../apps/dolphin
+    ../../common/system-utils/stylix/nixos
+    ../../common/system-utils/audio/nixos
+    ../../common/system-utils/printing/nixos
+    ../../common/system-utils/bluetooth/nixos
+    ../../common/system-utils/disks/nixos
+    ../../common/shells/quickshell/nixos
+    ../../../apps/dolphin/nixos
   ];
 
   programs.niri = {

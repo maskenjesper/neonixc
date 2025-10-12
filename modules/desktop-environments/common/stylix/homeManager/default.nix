@@ -15,7 +15,7 @@
 
     polarity = "dark";
 
-    image = ../../../../assets/active_wallpaper.jpg;
+    image = ../../../../../assets/active_wallpaper.jpg;
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/pandora.yaml";

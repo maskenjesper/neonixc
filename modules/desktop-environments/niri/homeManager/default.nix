@@ -4,10 +4,10 @@
   ...
 }: {
   imports = [
-    ../common/waybar
-    ../common/wofi
-    ../common/stylix
-    ../common/quickshell
+    ../../common/waybar/homeManager
+    ../../common/wofi/homeManager
+    ../../common/stylix/homeManager
+    ../../common/quickshell/homeManager
   ];
 
   home.file.".config/hypr" = {

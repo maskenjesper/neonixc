@@ -1,16 +1,26 @@
 { pkgs, inputs, ... }: 
 {
   imports = [
-    ../../../user/common
-    ../../../user/desktop-environments/hyprland
-    ../../../user/terminal/apps/nixCats
-    ../../../user/terminal/apps/tmux
-    ../../../user/terminal/apps/git
-    ../../../user/terminal/apps/gh
-    ../../../user/terminal/apps/direnv
-    ../../../user/terminal/emulators/kitty
-    ../../../user/terminal/shells/fish
-    ../../../user/apps/zen-browser
+    # ../../../user/common
+    # ../../../user/desktop-environments/hyprland
+    # ../../../user/terminal/apps/nixCats
+    # ../../../user/terminal/apps/tmux
+    # ../../../user/terminal/apps/git
+    # ../../../user/terminal/apps/gh
+    # ../../../user/terminal/apps/direnv
+    # ../../../user/terminal/emulators/kitty
+    # ../../../user/terminal/shells/fish
+    # ../../../user/apps/zen-browser
+    ../../../modules/common/homeManager
+    ../../../modules/desktop-environments/hyprland/homeManager
+    ../../../modules/terminal/apps/nixCats/homeManager
+    ../../../modules/terminal/apps/tmux/homeManager
+    ../../../modules/terminal/apps/git/homeManager
+    ../../../modules/terminal/apps/gh/homeManager
+    ../../../modules/terminal/apps/direnv/homeManager
+    ../../../modules/terminal/emulators/kitty/homeManager
+    ../../../modules/terminal/shells/fish/homeManager
+    ../../../modules/apps/zen-browser/homeManager
   ];
 
   home.username = "jakob";
