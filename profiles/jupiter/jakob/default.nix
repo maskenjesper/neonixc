@@ -1,8 +1,12 @@
-{ pkgs, inputs, ... }: 
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
+    ../../../modules/base/homeManager
+
     ../../../modules/terminal/apps/hello/homeManager
-    ../../../modules/common/homeManager
     ../../../modules/desktop-environments/hyprland/homeManager
     ../../../modules/terminal/apps/nixCats/homeManager
     ../../../modules/terminal/apps/tmux/homeManager
@@ -13,6 +17,8 @@
     ../../../modules/terminal/shells/fish/homeManager
     ../../../modules/apps/zen-browser/homeManager
   ];
+
+  # evalClass = "homeManager";
 
   home.username = "jakob";
   home.homeDirectory = "/home/jakob";
@@ -45,10 +51,8 @@
     furmark
     hwinfo
 
-
     kicad-small
     freecad-wayland
-
 
     # don't know if this is needed
 
@@ -62,7 +66,6 @@
     masterpdfeditor
 
     # Dev
-    
 
     # Studies
     anki-bin
@@ -76,11 +79,10 @@
 
     # Music
     spotify
-            
+
     # Productivity
     pomodoro-gtk
     blanket
-
   ];
 
   home.stateVersion = "24.05"; # Please read the comment before changing.

@@ -2,8 +2,7 @@
   config,
   inputs,
   ...
-}: 
-let
+}: let
   utils = inputs.nixCats.utils;
 in {
   imports = [

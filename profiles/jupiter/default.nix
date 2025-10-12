@@ -1,8 +1,13 @@
-{ pkgs, inputs, ... }: { 
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
-    ./hardware-configuration.nix 
+    ./hardware-configuration.nix
+    ../../modules/base/nixos
 
-    ../../modules/common/nixos
+    ../../modules/terminal/apps/hello/nixos
     ../../modules/desktop-environments/hyprland/nixos
     ../../modules/apps/_1password/nixos
     ../../modules/apps/teamviewer/nixos
@@ -18,10 +23,12 @@
     ../../modules/services/openrgb/nixos
   ];
 
+  # evalClass = "nixos";
+
   networking.hostName = "jupiter"; # Define your hostname.
 
   # Disable kernel messages in the console (tty)
-  # To avoid the error message: 
+  # To avoid the error message:
   #     usb 1-4: device descriptor read/all, error -110
   # on the login screen.
   # TODO: Figure out why this is happening.
@@ -30,16 +37,16 @@
   };
 
   syncthing = {
-      devices = {
-        "phone" = { id = "3Y7HXLU-57OAFNZ-MO5PJ2T-PY7MOPA-U6RHHGF-4BUQEGX-7JRNZBZ-Q4CAAAP"; };
-        "laptop" = { id = "NGB3ZV7-5TUJBHD-S4G55WQ-GB2IJKU-T27F57R-KYUUW6O-ABBPROL-WXS3WAW"; };
-        "rpi" = { id = ""; };
-      };
-      passwords.devices = [ "phone" "rpi" ];
-      second-brain.devices = [ "phone" "rpi" ];
+    devices = {
+      "phone" = {id = "3Y7HXLU-57OAFNZ-MO5PJ2T-PY7MOPA-U6RHHGF-4BUQEGX-7JRNZBZ-Q4CAAAP";};
+      "laptop" = {id = "NGB3ZV7-5TUJBHD-S4G55WQ-GB2IJKU-T27F57R-KYUUW6O-ABBPROL-WXS3WAW";};
+      "rpi" = {id = "";};
+    };
+    passwords.devices = ["phone" "rpi"];
+    second-brain.devices = ["phone" "rpi"];
   };
 
-  nix.settings.download-buffer-size = 1048576000; # 1GB 
+  nix.settings.download-buffer-size = 1048576000; # 1GB
 
   users.users.jakob = {
     isNormalUser = true;
@@ -51,7 +58,6 @@
     ];
   };
   programs.fish.enable = true;
-
 
   environment.systemPackages = with pkgs; [
     # Avoid adding packages here.
