@@ -73,6 +73,8 @@ in {
       ];
 
       optionalPlugins.general = with pkgs.vimPlugins; [
+        vim-fugitive
+        gitsigns-nvim
         indent-o-matic
         zen-mode-nvim
 
