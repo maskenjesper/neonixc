@@ -1,6 +1,7 @@
 require("jakob.general.oil")
 
 require("lze").load({
+	{ import = "jakob.general.git-integration" },
 	{ import = "jakob.general.telescope" },
 	{ import = "jakob.general.completion" },
 	{ import = "jakob.general.harpoon" },

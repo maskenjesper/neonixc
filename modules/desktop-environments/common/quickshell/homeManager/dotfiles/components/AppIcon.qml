@@ -20,7 +20,7 @@ Item {
     }
 
     ClippingWrapperRectangle {
-        radius: height/3
+        radius: height/2
         anchors.fill: parent
         color: ColorsConfig.palette.secondary_container
         Image {

@@ -21,7 +21,7 @@ Variants {
             left: true
             right: true
         }
-        implicitHeight: 40
+        implicitHeight: 32
 
         Rectangle {
             id: bg

@@ -11,48 +11,58 @@ Item {
 
     required property HyprlandWorkspace workspace
     property alias showBackground: background.visible
-    property color color: root.workspace.active && root.workspace.monitor === root.workspace.monitor ? ColorsConfig.palette.active_ws : ColorsConfig.palette.occupied_ws 
+    property color color: root.workspace.active && root.workspace.monitor === root.workspace.monitor ? ColorsConfig.palette.active_ws : ColorsConfig.palette.occupied_ws
+    property color textColor: root.workspace.active && root.workspace.monitor === root.workspace.monitor ? Qt.lighter(ColorsConfig.palette.text) : ColorsConfig.palette.text
 
     implicitHeight: 30
     implicitWidth: row.implicitWidth + 2 * row.anchors.margins
 
-    NumberAnimation on y { from: -100; to: root.y; duration: 1000; easing.type: Easing.OutBounce }
+    NumberAnimation on y {
+        from: -100
+        to: root.y
+        duration: 1000
+        easing.type: Easing.OutBounce
+    }
 
     Rectangle {
         id: background
 
         anchors {
             fill: parent
-            margins: root.workspace.active || mouseArea.containsMouse ? -1 : 2
+            margins: root.workspace.active || mouseArea.containsMouse ? -1 : 0
         }
         color: {
             if (!root.workspace.active) {
-                mouseArea.containsMouse ? Qt.lighter(root.color) : root.color
+                mouseArea.containsMouse ? Qt.lighter(root.color) : root.color;
             } else {
-                root.color
+                root.color;
             }
         }
-        radius: root.workspace.active ? root.height / 4 : root.height / 2 
+        radius: root.workspace.active ? root.height / 4 : root.height / 2
         visible: false
-        Behavior on radius { 
+
+        onWidthChanged: {
+            console.log(root.workspace.id + " changed");
+        }
+        Behavior on radius {
             SpringAnimation {
                 spring: 2
                 damping: 0.2
             }
         }
-        Behavior on width { 
+        Behavior on width {
             SpringAnimation {
                 spring: 2
                 damping: 0.2
             }
         }
-        Behavior on height { 
+        Behavior on height {
             SpringAnimation {
                 spring: 2
                 damping: 0.2
             }
         }
-        Behavior on color { 
+        Behavior on color {
             ColorAnimation {
                 duration: 200
             }
@@ -66,9 +76,9 @@ Item {
         hoverEnabled: true
         onClicked: event => {
             if (Hyprland.focusedWorkspace.id !== root.workspace.id) {
-                root.workspace.activate()
+                root.workspace.activate();
             }
-            console.log(root.workspace.toplevels.values.map(e => e.wayland.appId))
+            console.log(root.workspace.toplevels.values.map(e => e.wayland.appId));
         }
     }
 
@@ -79,7 +89,7 @@ Item {
             top: parent.top
             bottom: parent.bottom
             left: parent.left
-            margins: 5
+            margins: 2
         }
 
         spacing: 5
@@ -97,42 +107,41 @@ Item {
 
                     anchors.centerIn: parent
 
-                    color: ColorsConfig.palette.text
+                    color: root.textColor
 
                     font.pointSize: 1 + wsNameText.height * 0.7
                     text: root.workspace.name
-
                 }
             }
         }
 
-        // Rectangle {
-        //
-        //     Layout.fillHeight: true
-        //     Layout.preferredWidth: height
-        //
-        //     visible: repeater.count === 0
-        //
-        //     color: ColorsConfig.palette.occupied_ws
-        //
-        //     radius: height / 2
-        // }
-        //
-        // Repeater {
-        //     id: repeater
-        //     model: { 
-        //         Hyprland.refreshWorkspaces()
-        //         root.workspace.toplevels.values.map(e => e.wayland?.appId)
-        //     }
-        //
-        //     AppIcon {
-        //         required property string modelData
-        //
-        //         Layout.fillHeight: true
-        //         Layout.preferredWidth: height
-        //
-        //         appId: modelData
-        //     }
-        // }
+        Rectangle {
+
+            Layout.fillHeight: true
+            Layout.preferredWidth: height
+
+            visible: repeater.count === 0
+
+            color: ColorsConfig.palette.occupied_ws
+
+            radius: height / 2
+        }
+
+        Repeater {
+            id: repeater
+            model: {
+                Hyprland.refreshWorkspaces();
+                root.workspace.toplevels.values.map(e => e.wayland?.appId);
+            }
+
+            AppIcon {
+                required property string modelData
+
+                Layout.fillHeight: true
+                Layout.preferredWidth: height
+
+                appId: modelData
+            }
+        }
     }
 }

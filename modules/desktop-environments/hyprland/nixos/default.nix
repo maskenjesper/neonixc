@@ -1,5 +1,4 @@
-{ pkgs, ... }: {
-
+{pkgs, ...}: {
   imports = [
     ../../common/system-utils/stylix/nixos
     ../../common/system-utils/audio/nixos
@@ -10,14 +9,6 @@
     ../../../apps/dolphin/nixos
   ];
 
-  #programs.uwsm = {
-  #  enable = true;
-  #  waylandCompositors.hyprland = {
-  #    binPath = "/run/current-system/sw/bin/Hyprland";
-  #    comment = "Hyprland session managed by uwsm";
-  #    prettyName = "Hyprland";
-  #  };
-  #};
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -30,11 +21,6 @@
 
   systemd.services.display-manager.enable = false;
 
-#  services.displayManager.sddm = {
-#      enable = true;
-#      wayland.enable = true;
-#  };
-
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
@@ -43,10 +29,4 @@
   # Enable inter-application communication
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-
-  environment.systemPackages = with pkgs; [
-    where-is-my-sddm-theme 
-
-
-  ];
 }
