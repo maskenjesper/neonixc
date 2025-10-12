@@ -6,7 +6,7 @@
     ../../common/system-utils/printing/nixos
     ../../common/system-utils/bluetooth/nixos
     ../../common/system-utils/disks/nixos
-    ../../common/shells/quickshell-hyprland/nixos
+    ../../common/quickshell/nixos
     ../../../apps/dolphin/nixos
   ];
 

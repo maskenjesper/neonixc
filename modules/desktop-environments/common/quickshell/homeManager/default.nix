@@ -5,7 +5,7 @@
 }: {
 
   home.file.".config/quickshell" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/neonixc/user/desktop-environments/common/quickshell/dotfiles";
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/neonixc/modules/desktop-environments/common/quickshell/homeManager/dotfiles";
     recursive = true;
   };
 }

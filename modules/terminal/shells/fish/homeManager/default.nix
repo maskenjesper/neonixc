@@ -1,6 +1,6 @@
 { config, ... }: {
   home.file.".config/fish" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/neonixc/user/terminal/shells/fish/dotfiles";
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/neonixc/monitor/terminal/shells/fish/homeManager/dotfiles";
     recursive = true;
   };
 

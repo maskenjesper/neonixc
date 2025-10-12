@@ -1,7 +1,7 @@
 {inputs, ...}: {
 
     imports = [
-        ../../../display-manager/greetd-quickshell-hyprland/nixos
+        ../../display-manager/greetd/nixos
     ];
 
     environment.systemPackages = [
