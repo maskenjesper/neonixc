@@ -39,23 +39,14 @@
     flake-parts,
     import-tree,
     nixpkgs,
-    home-manager,
     self,
     ...
   }: let
     inherit (self) outputs;
 
-    lib = nixpkgs.lib // home-manager.lib;
-
     systems = ["x86_64-linux"];
 
-    forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
-
-    forAllSystems = inputs.nixpkgs.lib.genAttrs systems;
-    nixpkgsFor =
-      forAllSystems (system: import inputs.nixpkgs {inherit system;});
-
-    pkgsFor = lib.genAttrs systems (
+    pkgsFor = inputs.nixpkgs.lib.genAttrs systems (
       system:
         import nixpkgs {
           inherit system;
@@ -66,39 +57,11 @@
     flake-parts.lib.mkFlake {inherit inputs;}
     {
       imports = [
+        ./modules/flake
         ./modules/hosts
       ];
 
       systems = ["x86_64-linux"];
-
-      perSystem = {
-        pkgs,
-        self',
-        system,
-        inputs',
-        ...
-      }: {
-        packages = {
-          default = self'.packages.install;
-
-          install = pkgs.writeShellApplication {
-            name = "install";
-            runtimeInputs = with pkgs; [git inputs'.home-manager.packages.${system}.home-manager];
-            text = ''${.assets/scripts/install.sh} "$@"'';
-          };
-        };
-
-        apps = {
-          default = self'.apps.install;
-
-          install = {
-            type = "app";
-            program = "${self'.packages.install}/bin/install";
-          };
-        };
-
-        formatter = pkgs.alejandra;
-      };
 
       flake = {
         homeConfigurations = {
