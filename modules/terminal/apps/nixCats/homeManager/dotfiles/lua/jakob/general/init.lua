@@ -13,6 +13,7 @@ require("lze").load({
 	{ import = "jakob.general.indent-blankline" },
     -- { import = "jakob.general.zen-mode" },
         
+    { "indent-o-matic.nvim" },
 	{ "markview.nvim" },
 	{ "dressing.nvim" },
 	{ "vim-tmux-navigator" },

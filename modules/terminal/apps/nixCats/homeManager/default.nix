@@ -72,7 +72,7 @@ in {
       ];
 
       optionalPlugins.general = with pkgs.vimPlugins; [
-        vim-sleuth
+        indent-o-matic
         zen-mode-nvim
 
         hologram-nvim
