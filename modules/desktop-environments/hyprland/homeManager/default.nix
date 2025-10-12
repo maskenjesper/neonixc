@@ -11,7 +11,7 @@
   ];
 
   home.file.".config/hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/neonixc/modules/desktop-environments/hyprland/homeManage/dotfiles";
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/neonixc/modules/desktop-environments/hyprland/homeManager/dotfiles";
     recursive = true;
   };
 
