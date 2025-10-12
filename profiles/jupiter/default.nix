@@ -2,20 +2,20 @@
   imports = [
     ./hardware-configuration.nix 
 
-    ../../system/common
-    ../../system/desktop-environments/hyprland
-    ../../system/apps/_1password
-    ../../system/apps/teamviewer
-    ../../system/features/adb
-    ../../system/features/gaming 
-    ../../system/features/virtualization
-    ../../system/features/appimage
-    ../../system/features/stess_and_bench
-    ../../system/hardware/keyboard/keymap
-    ../../system/hardware/keyboard/xremap
-    ../../system/hardware/amd-gpu
-    ../../system/services/syncthing
-    ../../system/services/openrgb
+    ../../modules/common/nixos
+    ../../modules/desktop-environments/hyprland/nixos
+    ../../modules/apps/_1password/nixos
+    ../../modules/apps/teamviewer/nixos
+    ../../modules/features/adb/nixos
+    ../../modules/features/gaming/nixos
+    ../../modules/features/virtualization/nixos
+    ../../modules/features/appimage/nixos
+    ../../modules/features/stess_and_bench/nixos
+    ../../modules/hardware/keyboard/keymap/nixos
+    ../../modules/hardware/keyboard/xremap/nixos
+    ../../modules/hardware/amd-gpu/nixos
+    ../../modules/services/syncthing/nixos
+    ../../modules/services/openrgb/nixos
   ];
 
   networking.hostName = "jupiter"; # Define your hostname.
@@ -32,11 +32,11 @@
   syncthing = {
       devices = {
         "phone" = { id = "3Y7HXLU-57OAFNZ-MO5PJ2T-PY7MOPA-U6RHHGF-4BUQEGX-7JRNZBZ-Q4CAAAP"; };
-        "voyager" = { id = "NGB3ZV7-5TUJBHD-S4G55WQ-GB2IJKU-T27F57R-KYUUW6O-ABBPROL-WXS3WAW"; };
+        "laptop" = { id = "NGB3ZV7-5TUJBHD-S4G55WQ-GB2IJKU-T27F57R-KYUUW6O-ABBPROL-WXS3WAW"; };
         "rpi" = { id = ""; };
       };
-      passwords.devices = [ "phone" "voyager" "rpi" ];
-      second-brain.devices = [ "phone" "voyager" "rpi" ];
+      passwords.devices = [ "phone" "rpi" ];
+      second-brain.devices = [ "phone" "rpi" ];
   };
 
   nix.settings.download-buffer-size = 1048576000; # 1GB 
