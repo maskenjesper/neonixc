@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }: 
 {
   imports = [
-    ../../../modules/terminal/apps/hello/homeManager
+    # ../../../modules/terminal/apps/hello/homeManager
     ../../../modules/common/homeManager
     ../../../modules/desktop-environments/hyprland/homeManager
     ../../../modules/terminal/apps/nixCats/homeManager
