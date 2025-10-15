@@ -25,6 +25,7 @@
   home.packages = with pkgs; [
     # Trying out
     tree
+    gedit
     gnucash
     homebank
     kmymoney
