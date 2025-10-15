@@ -26,6 +26,7 @@
     # Trying out
     tree
     gedit
+    kdePackages.kate
     gnucash
     homebank
     kmymoney
