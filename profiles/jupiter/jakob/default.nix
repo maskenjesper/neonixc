@@ -27,6 +27,7 @@
     tree
     gedit
     kdePackages.kate
+    notepadqq
     gnucash
     homebank
     kmymoney
