@@ -44,7 +44,7 @@
   }: let
     inherit (self) outputs;
 
-    systems = ["x86_64-linux"];
+    systems = ["x86_64-linux" "aarch64-linux"];
 
     pkgsFor = inputs.nixpkgs.lib.genAttrs systems (
       system:
@@ -61,7 +61,7 @@
         ./modules/hosts
       ];
 
-      systems = ["x86_64-linux"];
+      systems = ["x86_64-linux" "aarch64-linux"];
 
       flake = {
         homeConfigurations = {
@@ -73,7 +73,7 @@
 
           "jakob@rpi" = inputs.home-manager.lib.homeManagerConfiguration {
             modules = [./profiles/rpi/jakob ./tasks];
-            pkgs = pkgsFor.x86_64-linux;
+            pkgs = pkgsFor.aarch64-linux;
             extraSpecialArgs = {inherit inputs outputs;};
           };
 

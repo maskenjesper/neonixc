@@ -5,6 +5,7 @@ import QtQuick.Layouts
 import Quickshell.Hyprland
 import qs.config
 import qs.components
+import qs.services
 
 Item {
     id: root
@@ -131,7 +132,9 @@ Item {
             id: repeater
             model: {
                 Hyprland.refreshWorkspaces();
-                root.workspace.toplevels.values.map(e => e.wayland?.appId);
+                root.workspace.toplevels.values.map(e => {
+                    e.wayland?.appId
+                });
             }
 
             AppIcon {
