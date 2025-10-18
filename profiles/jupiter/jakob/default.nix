@@ -35,6 +35,8 @@
     obsidian
     cool-retro-term
 
+    nixpkgs-vet
+
     alejandra
 
     cmatrix
