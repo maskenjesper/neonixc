@@ -34,7 +34,7 @@ Item {
             margins: 2
         }
 
-        spacing: 5
+        spacing: 7
 
         Repeater {
             model: Hyprland.workspaces

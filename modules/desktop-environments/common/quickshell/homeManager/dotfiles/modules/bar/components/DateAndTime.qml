@@ -7,15 +7,14 @@ import qs.config
 Item {
     id: root
 
-    implicitWidth: content.implicitWidth + 20
-    implicitHeight: content.implicitHeight + 20
+    implicitHeight: 30
+    implicitWidth: row.implicitWidth + 2 * row.anchors.margins
 
     Rectangle {
         anchors.fill: parent
         color: ColorsConfig.palette.occupied_ws
         radius: root.height / 2
         visible: mouseArea.containsMouse
-
     }
 
     MouseArea {
@@ -25,40 +24,57 @@ Item {
         }
         hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
-
     }
 
-    Item {
-        id: content
-
-        implicitHeight: childrenRect.height
-        implicitWidth: childrenRect.width
+    RowLayout {
+        id: row
 
         anchors {
-            centerIn: parent
-            margins: 20
+            top: parent.top
+            bottom: parent.bottom
+            left: parent.left
+            margins: 2
         }
 
-        Text {
+        spacing: 5
+
+        Item {
             id: time
-            color: ColorsConfig.palette.text
-            font {
-                pointSize: 16
-            }
-            text: Time.time
-        }
+            Layout.fillHeight: true
+            Layout.preferredWidth: timeText.width
 
-        Text {
+            Loader {
+                anchors.fill: parent
+                active: time.height > 0
+                Text {
+                    id: timeText
+                    anchors.centerIn: parent
+
+                    color: ColorsConfig.palette.text
+
+                    font.pointSize: 1 + time.height * 0.5
+                    text: Time.time
+                }
+            }
+        }
+        Item {
             id: date
-            anchors {
-                left: time.right
-                margins: 10
+            Layout.fillHeight: true
+            Layout.preferredWidth: dateText.width
+
+            Loader {
+                anchors.fill: parent
+                active: date.height > 0
+                Text {
+                    id: dateText
+                    anchors.centerIn: parent
+
+                    color: ColorsConfig.palette.text
+
+                    font.pointSize: 1 + date.height * 0.5
+                    text: Date.date
+                }
             }
-            color: ColorsConfig.palette.text
-            font {
-                pointSize: 16
-            }
-            text: Date.date
         }
     }
 }

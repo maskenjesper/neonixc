@@ -18,11 +18,11 @@ Item {
     implicitHeight: 30
     implicitWidth: row.implicitWidth + 2 * row.anchors.margins
 
-    NumberAnimation on y {
-        from: -100
-        to: root.y
+    NumberAnimation on opacity {
+        from: 0
+        to: 1
         duration: 1000
-        easing.type: Easing.OutBounce
+        easing.type: Easing.OutQuad
     }
 
     Rectangle {
@@ -42,9 +42,6 @@ Item {
         radius: root.workspace.active ? root.height / 4 : root.height / 2
         visible: false
 
-        onWidthChanged: {
-            console.log(root.workspace.id + " changed");
-        }
         Behavior on radius {
             SpringAnimation {
                 spring: 2
@@ -79,7 +76,6 @@ Item {
             if (Hyprland.focusedWorkspace.id !== root.workspace.id) {
                 root.workspace.activate();
             }
-            console.log(root.workspace.toplevels.values.map(e => e.wayland.appId));
         }
     }
 
@@ -116,35 +112,35 @@ Item {
             }
         }
 
-        Rectangle {
-
-            Layout.fillHeight: true
-            Layout.preferredWidth: height
-
-            visible: repeater.count === 0
-
-            color: ColorsConfig.palette.occupied_ws
-
-            radius: height / 2
-        }
+        // Rectangle {
+        //
+        //     Layout.fillHeight: true
+        //     Layout.preferredWidth: height
+        //
+        //     visible: repeater.count === 0
+        //
+        //     color: ColorsConfig.palette.occupied_ws
+        //
+        //     radius: height / 2
+        // }
 
         Repeater {
             id: repeater
             model: {
                 Hyprland.refreshWorkspaces();
                 root.workspace.toplevels.values.map(e => {
-                    e.wayland?.appId
+                    e.wayland?.appId;
                 });
             }
 
-            AppIcon {
-                required property string modelData
-
-                Layout.fillHeight: true
-                Layout.preferredWidth: height
-
-                appId: modelData
-            }
+            // AppIcon {
+            //     required property string modelData
+            //
+            //     Layout.fillHeight: true
+            //     Layout.preferredWidth: height
+            //
+            //     appId: modelData
+            // }
         }
     }
 }
