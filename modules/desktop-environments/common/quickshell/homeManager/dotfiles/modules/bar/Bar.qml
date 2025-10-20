@@ -20,8 +20,47 @@ Variants {
 
         screen: modelData
 
+        color: "transparent"
+
         property HyprlandMonitor monitor: Hypr.monitorFor(screen)
-        property bool floating: Hypr.nrOfToplevelsOn(monitor.activeWorkspace) > 1 || Hypr.nrOfToplevelsOn(monitor.activeWorkspace) == 0
+        property bool dynamicPos: false
+        property bool dynamicOpacity: true
+        property bool singleWindow: Hypr.nrOfToplevelsOn(monitor.activeWorkspace) == 1
+        property double floating: {
+            if (!dynamicPos)
+                return false;
+
+            var edgeTouched = monitor.activeWorkspace.toplevels.values.every(tl => {
+                return !panelEdgeTouched(tl, monitor);
+            });
+
+            return edgeTouched;
+        }
+        property double floatingMargin: 10
+        property double opacity: {
+            if (!dynamicOpacity)
+                return 1;
+
+            var edgeTouched = monitor.activeWorkspace.toplevels.values.every(tl => {
+                return !panelEdgeTouched(tl, monitor);
+            });
+
+            return edgeTouched ? 0.5 : 1;
+        }
+
+        // TODO: Edge detection seems to work but making a window floating doesn't
+        // trigger a update it seems
+        function panelEdgeTouched(toplevel: HyprlandToplevel, monitor: HyprlandMonitor): bool {
+            Hyprland.refreshToplevels();
+            if (toplevel.wayland == null)
+                return false;
+
+            var y = toplevel.lastIpcObject.at[1];
+
+            if (toplevel.wayland.parent == null) {
+                return y <= mainWindow.height + monitor.y;
+            }
+        }
 
         anchors {
             top: true
@@ -31,22 +70,50 @@ Variants {
         implicitHeight: 32
 
         margins {
-            top: floating ? 10 : 0
-            left: floating ? 10 : 0
-            right: floating ? 10 : 0
+            left: floating ? floatingMargin : 0
+            right: floating ? floatingMargin : 0
+            top: floating ? floatingMargin : 0
         }
 
-        Rectangle {
+        Item {
             id: bg
-            anchors.fill: parent
-            color: ColorsConfig.palette.bar_background
+            anchors {
+                fill: parent
+            }
+
+            Rectangle {
+                id: box
+                anchors.fill: parent
+                color: ColorsConfig.palette.bar_background
+                border.color: mainWindow.floating ? Qt.rgba(1, 1, 1, 0.05) : ColorsConfig.palette.bar_background
+                opacity: mainWindow.opacity
+                radius: mainWindow.floating ? 15 : 0
+                Behavior on radius {
+                    SpringAnimation {
+                        spring: 2
+                        damping: 0.2
+                    }
+                }
+                Behavior on opacity {
+                    SpringAnimation {
+                        spring: 2
+                        damping: 0.2
+                    }
+                }
+                Behavior on width {
+                    SpringAnimation {
+                        spring: 2
+                        damping: 0.2
+                    }
+                }
+            }
 
             WorkspaceScroll {}
 
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log(Hypr.nrOfToplevelsOn(mainWindow.monitor.activeWorkspace));
+                    mainWindow.panelEdgeTouched(mainWindow.monitor.activeWorkspace.toplevels.values[0]);
                 }
             }
 
@@ -78,6 +145,7 @@ Variants {
                                 margins: 3
                             }
                             showBackground: false
+                            containerOpacity: mainWindow.opacity
                         }
 
                         WindowTitle {

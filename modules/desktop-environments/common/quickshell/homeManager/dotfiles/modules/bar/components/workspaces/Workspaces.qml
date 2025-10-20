@@ -11,6 +11,7 @@ Item {
 
     readonly property HyprlandMonitor monitor: Hyprland.monitorFor(root.QsWindow.window?.screen)
     property alias showBackground: background.visible
+    property double containerOpacity
 
     implicitHeight: 30
     implicitWidth: row.implicitWidth + 2 * row.anchors.margins
@@ -48,6 +49,7 @@ Item {
 
                 workspace: modelData
                 showBackground: true
+                containerOpacity: root.containerOpacity
             }
         }
     }

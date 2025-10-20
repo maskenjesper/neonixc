@@ -14,6 +14,7 @@ Item {
     property alias showBackground: background.visible
     property color color: root.workspace.active && root.workspace.monitor === root.workspace.monitor ? ColorsConfig.palette.active_ws : ColorsConfig.palette.occupied_ws
     property color textColor: root.workspace.active && root.workspace.monitor === root.workspace.monitor ? Qt.lighter(ColorsConfig.palette.text) : ColorsConfig.palette.text
+    property double containerOpacity: 1
 
     implicitHeight: 30
     implicitWidth: row.implicitWidth + 2 * row.anchors.margins
@@ -41,6 +42,7 @@ Item {
         }
         radius: root.workspace.active ? root.height / 4 : root.height / 2
         visible: false
+        opacity: root.containerOpacity
 
         Behavior on radius {
             SpringAnimation {

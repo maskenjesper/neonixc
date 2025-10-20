@@ -27,13 +27,14 @@
     tree
     gedit
     kdePackages.kate
-    notepadqq
     gnucash
     homebank
     kmymoney
     keepassxc
     obsidian
     cool-retro-term
+
+    protonmail-desktop
 
     nixpkgs-vet
 
