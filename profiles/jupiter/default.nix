@@ -22,6 +22,7 @@
     ../../modules/hardware/amd-gpu/nixos
     ../../modules/services/syncthing/nixos
     ../../modules/services/openrgb/nixos
+    ../../modules/apps/dolphin/nixos
   ];
 
   networking.hostName = "jupiter"; # Define your hostname.
