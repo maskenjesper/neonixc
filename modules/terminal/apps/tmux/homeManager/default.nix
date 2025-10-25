@@ -54,9 +54,9 @@ in {
       # bind r source-file ~/.config/tmux/tmux.conf \; display-message "config re-sourced"
 
       # tmux prefix
-      unbind C-b
-      set -g prefix C-Space
-      bind C-Space send-prefix
+      # unbind C-b
+      # set -g prefix C-Space
+      # bind C-Space send-prefix
 
       # sessionizer
       bind e new-window tmux-sessionizer
