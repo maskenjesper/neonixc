@@ -47,7 +47,7 @@
     waybar
 
     # App launcher
-    rofi-wayland
+    rofi
 
     # Clipboard management
     wl-clipboard

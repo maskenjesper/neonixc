@@ -27,9 +27,6 @@
     tree
     gedit
     kdePackages.kate
-    gnucash
-    homebank
-    kmymoney
     keepassxc
     obsidian
     cool-retro-term

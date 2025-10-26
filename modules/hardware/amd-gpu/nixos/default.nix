@@ -1,7 +1,7 @@
 
 {pkgs, config, ...}: {
 
-    environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
         clinfo
         lact
     ];
@@ -24,10 +24,10 @@
     hardware.graphics = {
         extraPackages = with pkgs; [
             rocmPackages.clr.icd
-            amdvlk
+            # amdvlk
         ];
         extraPackages32 = with pkgs; [
-            driversi686Linux.amdvlk
+            # driversi686Linux.amdvlk
         ];
         enable32Bit = true;
     };
