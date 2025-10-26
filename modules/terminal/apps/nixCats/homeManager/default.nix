@@ -23,7 +23,7 @@ in {
       lspsAndRuntimeDeps.general = with pkgs; [
         universal-ctags
         ripgrep
-        
+
         fd
         zoxide
         fzf
@@ -67,6 +67,7 @@ in {
         vim-repeat
         plenary-nvim
         nvim-web-devicons
+        nvim-lspconfig
         markview-nvim
         gruvbox-nvim
         kanagawa-nvim
@@ -130,9 +131,6 @@ in {
 
         #format
         conform-nvim
-
-        #lsp
-        nvim-lspconfig
       ];
 
       environmentVariables.general = {
