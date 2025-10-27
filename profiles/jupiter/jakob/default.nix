@@ -24,6 +24,7 @@
   # For packages that need no configuration (yet...)
   home.packages = with pkgs; [
     # Trying out
+    hardinfo2
     teams-for-linux
     tree
     gedit
