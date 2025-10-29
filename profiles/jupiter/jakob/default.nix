@@ -33,6 +33,8 @@
     obsidian
     cool-retro-term
 
+    netbeans
+
     protonmail-desktop
 
     nixpkgs-vet

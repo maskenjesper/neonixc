@@ -1,6 +1,6 @@
 local oil = require("oil")
 vim.g.loaded_netrwPlugin = 1
-vim.keymap.set("n", "-", "<cmd>Oil<CR>", { noremap = true, desc = "Open Parent Directory" })
+vim.keymap.set("n", "<Left>", "<cmd>Oil<CR>", { noremap = true, desc = "Open Parent Directory" })
 vim.keymap.set("n", "<leader>-", "<cmd>Oil .<CR>", { noremap = true, desc = "Open nvim root directory" })
 -- vim.keymap.set("n", "<leader>o", string.format("<cmd>!tmux new-window -c %s<CR>", oil.get_current_dir(nil)), { noremap = true, desc = "Open dir in new tmux window"})
 vim.keymap.set("n", "<leader>o", function()
@@ -73,14 +73,14 @@ oil.setup({
 	-- See :help oil-actions for a list of all available actions
 	keymaps = {
 		["g?"] = { "actions.show_help", mode = "n" },
-		["<CR>"] = "actions.select",
+		["<Right>"] = "actions.select",
 		["<C-s>"] = { "actions.select", opts = { vertical = true } },
 		["<C-h>"] = false,
 		["<C-t>"] = { "actions.select", opts = { tab = true } },
 		["<C-p>"] = "actions.preview",
 		["<C-c>"] = { "actions.close", mode = "n" },
 		["<C-l>"] = false,
-		["-"] = { "actions.parent", mode = "n" },
+		["<Left>"] = { "actions.parent", mode = "n" },
 		["_"] = { "actions.open_cwd", mode = "n" },
 		["`"] = { "actions.cd", mode = "n" },
 		["~"] = { "actions.cd", opts = { scope = "tab" }, mode = "n" },
