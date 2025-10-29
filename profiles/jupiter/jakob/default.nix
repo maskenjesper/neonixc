@@ -34,6 +34,7 @@
     cool-retro-term
 
     netbeans
+    sublime
 
     protonmail-desktop
 
