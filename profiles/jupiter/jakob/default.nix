@@ -33,6 +33,8 @@
     obsidian
     cool-retro-term
 
+    lua
+
     netbeans
     sublime
 

@@ -12,19 +12,13 @@ vim.keymap.set("n", "<leader>q", vim.cmd.q)
 -- Launch tmux-sessionizer
 vim.keymap.set("n", "<C-e>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
--- Copy pasting --
--- Use the plus register so that the system clipboard is accessed
--- vim.keymap.set("n", "y", "y")
--- vim.keymap.set("v", "y", "y")
--- vim.keymap.set("n", "p", "p")
--- vim.keymap.set("v", "p", "p")
 -- Copy/Paste normally
 vim.keymap.set("n", "<C-y>", '"+y')
 vim.keymap.set("v", "<C-y>", '"+y')
 vim.keymap.set("n", "<C-p>", '"+p')
 vim.keymap.set("v", "<C-p>", '"+p')
 
--- keymap.set("i", "jj", "<ESC>:w<cr>", { desc = "Exit insert mode with jk" })
+vim. keymap.set("i", "jj", "<ESC>:w<cr>", { desc = "Exit insert mode with jk" })
 
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
