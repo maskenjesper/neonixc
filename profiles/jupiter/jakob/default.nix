@@ -48,6 +48,8 @@
     xaos
     electricsheep
 
+    github-desktop
+
     freecad-wayland
     openscad
 

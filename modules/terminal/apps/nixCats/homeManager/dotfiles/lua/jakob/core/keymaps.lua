@@ -1,5 +1,6 @@
--- New config. Only Vanilla keymaps here
 vim.g.mapleader = " "
+
+vim.keymap.set("i", "jj", "<ESC>:w<cr>", { desc = "Exit insert mode with jk" })
 
 -- Source file in buffer
 vim.keymap.set("n", "<leader>sf", ":% source<CR>")
@@ -18,9 +19,8 @@ vim.keymap.set("v", "<C-y>", '"+y')
 vim.keymap.set("n", "<C-p>", '"+p')
 vim.keymap.set("v", "<C-p>", '"+p')
 
-vim. keymap.set("i", "jj", "<ESC>:w<cr>", { desc = "Exit insert mode with jk" })
-
-vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+-- Search
+vim.keymap.set("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- buffer management
 vim.keymap.set("n", "<leader>bs", ":ls<CR>", { desc = "Show buffer stack" })
@@ -39,3 +39,4 @@ vim.keymap.set("n", "<leader>tq", "<cmd>tabclose<CR>", { desc = "Close current t
 vim.keymap.set("n", "<leader>tj", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 vim.keymap.set("n", "<leader>tk", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 vim.keymap.set("n", "<leader>tb", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
