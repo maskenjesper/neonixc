@@ -33,6 +33,9 @@
     obsidian
     cool-retro-term
 
+    arduino-cli
+    arduino-ide
+
     lua
 
     netbeans
