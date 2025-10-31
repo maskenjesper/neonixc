@@ -34,7 +34,7 @@
     cool-retro-term
 
     arduino-cli
-    arduino-ide
+    arduino
 
     lua
 
