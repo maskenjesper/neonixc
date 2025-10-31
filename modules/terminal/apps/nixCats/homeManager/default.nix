@@ -59,6 +59,8 @@ in {
         kdePackages.qtdeclarative
 
         openscad-lsp
+
+        arduino-language-server
       ];
 
       startupPlugins.general = with pkgs.vimPlugins; [
