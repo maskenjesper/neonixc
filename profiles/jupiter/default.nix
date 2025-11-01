@@ -52,7 +52,7 @@
     isNormalUser = true;
     shell = pkgs.fish;
     description = "Jakob Olsson";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "dialout"];
     packages = [
       pkgs.home-manager
     ];
