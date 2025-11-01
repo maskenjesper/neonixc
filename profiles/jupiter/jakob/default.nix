@@ -34,6 +34,7 @@
     cool-retro-term
 
     arduino-cli
+    electron
     arduino-ide
 
     lua
