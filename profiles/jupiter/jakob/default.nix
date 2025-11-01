@@ -21,6 +21,10 @@
   home.username = "jakob";
   home.homeDirectory = "/home/jakob";
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-gtk3-1.1.07"
+  ];
+
   # For packages that need no configuration (yet...)
   home.packages = with pkgs; [
     # Trying out
@@ -32,6 +36,8 @@
     keepassxc
     obsidian
     cool-retro-term
+
+    ventoy-full-gtk
 
     lua
     arduino
