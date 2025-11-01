@@ -34,6 +34,7 @@
     cool-retro-term
 
     lua
+    arduino
 
     netbeans
     sublime
