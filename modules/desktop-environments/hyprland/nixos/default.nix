@@ -1,16 +1,27 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ../../common/quickshell/nixos
     ../../common/nixos
   ];
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    withUWSM = true;
+  options = {
+    hyprland.enabled = lib.mkOption {type = lib.types.bool;};
   };
-  environment.sessionvariables = {
-    wlr_no_hardware_cursors = "1";
-    nixos_ozone_wl = "1";
+
+  config = {
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+      withUWSM = true;
+    };
+    environment.sessionVariables = {
+      wlr_no_hardware_cursors = "1";
+      nixos_ozone_wl = "1";
+    };
   };
 }

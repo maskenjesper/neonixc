@@ -1,34 +1,45 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ../../common/quickshell/nixos
     ../../common/nixos
   ];
 
-  programs.niri = {
-    enable = true;
+  options = {
+    niri.enabled = lib.mkOption {type = lib.types.bool;};
   };
-  # environment.sessionvariables = {
-  #   wlr_no_hardware_cursors = "1";
-  #   nixos_ozone_wl = "1";
-  # };
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  config = {
+    programs.niri = {
+      enable = true;
+    };
+    # environment.sessionvariables = {
+    #   wlr_no_hardware_cursors = "1";
+    #   nixos_ozone_wl = "1";
+    # };
 
-  security.polkit.enable = true; # polkit
-  services.gnome.gnome-keyring.enable = true; # secret service
-  security.pam.services.swaylock = {};
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  # Enable inter-application communication
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    security.polkit.enable = true; # polkit
+    services.gnome.gnome-keyring.enable = true; # secret service
+    security.pam.services.swaylock = {};
 
-  programs.waybar.enable = true;
-  environment.systemPackages = with pkgs; [
-    alacritty
-    fuzzel
-    swaylock
-    mako
-    swayidle
-    xwayland-satellite # xwayland support
-  ];
+    # Enable inter-application communication
+    xdg.portal.enable = true;
+    xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+
+    programs.waybar.enable = true;
+    environment.systemPackages = with pkgs; [
+      alacritty
+      fuzzel
+      swaylock
+      mako
+      swayidle
+      xwayland-satellite # xwayland support
+    ];
+  };
 }
