@@ -73,6 +73,7 @@ in {
         markview-nvim
         gruvbox-nvim
         kanagawa-nvim
+        neoscroll-nvim
       ];
 
       optionalPlugins.general = with pkgs.vimPlugins; [
@@ -108,8 +109,6 @@ in {
         nvim-treesitter.withAllGrammars
 
         which-key-nvim
-
-        neoscroll-nvim
 
         dressing-nvim
 

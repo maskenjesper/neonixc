@@ -18,6 +18,7 @@ require("lze").load({
 	{ "markview.nvim" },
 	{ "dressing.nvim" },
 	{ "vim-tmux-navigator" },
+	 
 	{
 		"hologram.nvim",
 		config = true,

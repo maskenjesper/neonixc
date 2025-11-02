@@ -4,13 +4,18 @@
     ../../common/nixos
   ];
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    withUWSM = true;
+  options = {
   };
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
+
+  config = {
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+      withUWSM = true;
+    };
+    environment.sessionVariables = {
+      WLR_NO_HARDWARE_CURSORS = "1";
+      NIXOS_OZONE_WL = "1";
+    };
   };
 }
