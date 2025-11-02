@@ -1,5 +1,4 @@
-{ ... }: {
-
+{...}: {
   nixpkgs.config.allowUnfree = true;
 
   # Bootloader.
@@ -29,8 +28,6 @@
 
   services.flatpak.enable = true;
 
-  nix.settings.auto-optimise-store = true;
-
   # Automatically delete generations older than 7 days.
   nix.gc = {
     automatic = true;
@@ -39,5 +36,13 @@
   };
 
   # Use flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings = {
+    experimental-features = ["nix-command" "flakes"];
+
+    auto-optimise-store = true;
+
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
 }
