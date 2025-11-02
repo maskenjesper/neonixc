@@ -10,17 +10,12 @@
     ../../common/quickshell/homeManager
   ];
 
-  home.file.".config/hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/neonixc/modules/desktop-environments/hyprland/homeManager/dotfiles";
+  home.file.".config/niri" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/neonixc/modules/desktop-environments/niri/homeManager/dotfiles";
     recursive = true;
   };
 
-  # Explicitly avoids conficts with uswm
-  wayland.windowManager.hyprland.systemd.enable = false;
-
   home.packages = with pkgs; [
-
-
     networkmanagerapplet
     gucharmap
     alarm-clock-applet
@@ -50,13 +45,13 @@
     waybar
 
     # App launcher
-    rofi-wayland
+    rofi
 
     # Clipboard management
     wl-clipboard
     cliphist
 
-#####################
+    #####################
     # Disk usage analyzer
     baobab
 

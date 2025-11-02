@@ -1,12 +1,7 @@
 {pkgs, ...}: {
   imports = [
-    ../../common/system-utils/stylix/nixos
-    ../../common/system-utils/audio/nixos
-    ../../common/system-utils/printing/nixos
-    ../../common/system-utils/bluetooth/nixos
-    ../../common/system-utils/disks/nixos
-    ../../common/shells/quickshell/nixos
-    ../../../apps/dolphin/nixos
+    ../../common/quickshell/nixos
+    ../../common/nixos
   ];
 
   programs.niri = {
@@ -20,4 +15,13 @@
   # Enable inter-application communication
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+
+  programs.waybar.enable = true;
+  environment.systemPackages = with pkgs; [
+    alacritty
+    fuzzel
+    swaylock
+    mako
+    swayidle
+  ];
 }
