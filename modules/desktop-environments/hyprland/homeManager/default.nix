@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }: {
   imports = [
@@ -15,7 +16,13 @@
   };
 
   # Explicitly avoids conficts with uswm
-  wayland.windowManager.hyprland.systemd.enable = false;
+  wayland.windowManager.hyprland = {
+    systemd.enable = false;
+    enable = false;
+    plugins = [
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprspace
+    ];
+  };
 
   home.packages = with pkgs; [
     networkmanagerapplet

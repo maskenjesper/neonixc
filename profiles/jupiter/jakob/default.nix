@@ -7,7 +7,7 @@
     ../../../modules/base/homeManager
 
     ../../../modules/terminal/apps/hello/homeManager
-    ../../../modules/desktop-environments/niri/homeManager
+    ../../../modules/desktop-environments/hyprland/homeManager
     ../../../modules/terminal/apps/nixCats/homeManager
     ../../../modules/terminal/apps/tmux/homeManager
     ../../../modules/terminal/apps/git/homeManager
