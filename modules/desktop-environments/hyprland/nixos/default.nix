@@ -8,7 +8,7 @@
   imports = [
     ../../common/quickshell/nixos
     ../../common/nixos
-    # inputs.hyprland.nixosModules.default
+    inputs.hyprland.nixosModules.default
   ];
 
   options = {
@@ -20,11 +20,10 @@
       enable = true;
       xwayland.enable = true;
       withUWSM = true;
-      # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-      # plugins = [
-      #   inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
-      # ];
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      plugins = [
+      ];
     };
     environment.sessionVariables = {
       wlr_no_hardware_cursors = "1";
