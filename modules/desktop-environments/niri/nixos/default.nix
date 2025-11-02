@@ -7,6 +7,10 @@
   programs.niri = {
     enable = true;
   };
+  # environment.sessionvariables = {
+  #   wlr_no_hardware_cursors = "1";
+  #   nixos_ozone_wl = "1";
+  # };
 
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service
@@ -23,5 +27,6 @@
     swaylock
     mako
     swayidle
+    xwayland-satellite # xwayland support
   ];
 }
