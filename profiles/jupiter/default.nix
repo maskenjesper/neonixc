@@ -18,7 +18,6 @@
     ../../modules/features/appimage/nixos
     ../../modules/features/stess_and_bench/nixos
     ../../modules/hardware/keyboard/keymap/nixos
-    # ../../modules/hardware/keyboard/xremap/nixos
     ../../modules/hardware/amd-gpu/nixos
     ../../modules/services/syncthing/nixos
     ../../modules/services/openrgb/nixos
