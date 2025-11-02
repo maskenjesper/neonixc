@@ -12,6 +12,8 @@
   #   nixos_ozone_wl = "1";
   # };
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service
   security.pam.services.swaylock = {};
