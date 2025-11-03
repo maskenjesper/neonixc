@@ -4,7 +4,9 @@
   config,
   inputs,
   ...
-}: {
+}: let
+pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in {
   imports = [
     ../../common/quickshell/nixos
     ../../common/nixos
@@ -26,6 +28,13 @@
         inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprscrolling
       ];
     };
+
+    hardware.graphics = {
+      package = pkgs-unstable.mesa;
+      enable32Bit = true;
+      package32 = pkgs-unstable.pkgsi686Linux.mesa;
+    };
+
     environment.sessionVariables = {
       wlr_no_hardware_cursors = "1";
       nixos_ozone_wl = "1";
