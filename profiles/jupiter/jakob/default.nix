@@ -36,6 +36,8 @@
     keepassxc
     obsidian
     cool-retro-term
+    
+    neovide
 
     ventoy-full-gtk
 
