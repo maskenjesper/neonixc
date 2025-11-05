@@ -37,9 +37,9 @@
     obsidian
     cool-retro-term
     
-    neovide
-
     ventoy-full-gtk
+
+    qbittorrent
 
     lua
     arduino
