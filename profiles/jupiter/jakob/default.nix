@@ -40,6 +40,8 @@
     ventoy-full-gtk
 
     qbittorrent
+    
+    sequoia
 
     lua
     arduino
