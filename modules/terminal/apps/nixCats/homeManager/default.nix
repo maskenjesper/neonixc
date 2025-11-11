@@ -61,6 +61,8 @@ in {
         openscad-lsp
 
         arduino-language-server
+
+        ccls
       ];
 
       startupPlugins.general = with pkgs.vimPlugins; [
