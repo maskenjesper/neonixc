@@ -62,7 +62,7 @@ in {
 
         arduino-language-server
 
-        ccls
+        clang
       ];
 
       startupPlugins.general = with pkgs.vimPlugins; [
