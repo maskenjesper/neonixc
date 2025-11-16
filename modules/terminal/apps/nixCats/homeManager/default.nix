@@ -63,6 +63,7 @@ in {
         arduino-language-server
 
         clang
+        clang-tools
       ];
 
       startupPlugins.general = with pkgs.vimPlugins; [
