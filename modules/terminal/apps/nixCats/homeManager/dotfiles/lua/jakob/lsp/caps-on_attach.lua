@@ -3,9 +3,6 @@ function M.on_attach(client, bufnr)
 	-- we create a function that lets us more easily define mappings specific
 	-- for LSP related items. It sets the mode, buffer and description for us each time.
 	
-	-- TODO: maybe remove
-	client.server_capabilites.signatureHelpProvider = false
-
 	local nmap = function(keys, func, desc)
 		if desc then
 			desc = "LSP: " .. desc

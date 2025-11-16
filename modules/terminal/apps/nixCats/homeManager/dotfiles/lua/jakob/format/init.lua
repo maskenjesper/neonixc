@@ -26,6 +26,7 @@ require("lze").load({
 					lua = { "stylua" },
 					bash = { "shfmt" },
 					go = { "gofmt" },
+					cpp = { "clang-format" },
 				},
 			})
 
