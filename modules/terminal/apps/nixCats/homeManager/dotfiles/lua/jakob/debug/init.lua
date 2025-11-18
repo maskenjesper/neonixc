@@ -1,0 +1,10 @@
+-- require("lze").load({
+-- 	{
+-- 		"dap.nvim",
+-- 		after = function(plugin)
+-- 			local conform = require("dap")
+--
+-- 			conform.setup({})
+-- 		end,
+-- 	},
+-- })
