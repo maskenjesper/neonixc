@@ -54,6 +54,8 @@ local servers = {
 	openscad_lsp = {},
 
 	clangd = {},
+
+	cmake = {},
 }
 
 -- Set the default root marker for all LSP clients.
