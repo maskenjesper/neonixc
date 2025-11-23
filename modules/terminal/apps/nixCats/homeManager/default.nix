@@ -65,6 +65,8 @@ in {
         clang
         clang-tools
         cmake-language-server
+        cmake-format
+        cmake-lint
       ];
 
       startupPlugins.general = with pkgs.vimPlugins; [

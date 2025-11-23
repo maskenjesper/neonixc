@@ -27,6 +27,7 @@ require("lze").load({
 					bash = { "shfmt" },
 					go = { "gofmt" },
 					cpp = { "clang-format" },
+					cmake = { "cmake-format" },
 				},
 			})
 

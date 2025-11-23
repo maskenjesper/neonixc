@@ -2,6 +2,14 @@ return {
 	{
 		"cmake-tools.nvim",
 		after = function()
+
+		-- set keymaps
+		local keymap = vim.keymap
+		keymap.set("n", "<leader>cmb", "<cmd>CMakeBuild<cr>", { desc = "[CM]ake [B]uild" })
+		keymap.set("n", "<leader>cmR", "<cmd>CMakeRun<cr>", { desc = "[CM]ake [R]un" })
+		keymap.set("n", "<leader>cmrt", "<cmd>CMakeRunTest<cr>", { desc = "[CM]ake [R]un [T]est" })
+
+
 			local osys = require("cmake-tools.osys")
 			require("cmake-tools").setup({
 				cmake_command = "cmake", -- this is used to specify cmake command path

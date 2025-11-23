@@ -36,25 +36,15 @@ local servers = {
 		filetypes = { "elixir" },
 	},
 	gopls = {},
-
 	dartls = {},
-
 	bashls = {},
-
 	fish_lsp = {},
-
 	yamlls = {},
-
 	hyprls = {},
-
 	csharp_ls = {},
-
 	qmlls = {},
-
 	openscad_lsp = {},
-
 	clangd = {},
-
 	cmake = {},
 }
 
