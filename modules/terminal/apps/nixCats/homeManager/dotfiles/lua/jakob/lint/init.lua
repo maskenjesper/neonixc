@@ -13,7 +13,7 @@ require("lze").load({
 				-- markdown = {'vale',},
 				-- javascript = { 'eslint' },
 				-- typescript = { 'eslint' },
-				cmake = { "cmake-lint" },
+				cmake = { "cmakelint" },
 			}
 
 			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
