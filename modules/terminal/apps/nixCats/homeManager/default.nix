@@ -80,6 +80,8 @@ in {
       ];
 
       optionalPlugins.general = with pkgs.vimPlugins; [
+        cmake-tools-nvim
+
         vim-fugitive
         gitsigns-nvim
         indent-o-matic

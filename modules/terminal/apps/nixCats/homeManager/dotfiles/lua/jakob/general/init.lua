@@ -7,18 +7,19 @@ require("lze").load({
 	{ import = "jakob.general.harpoon" },
 	{ import = "jakob.general.lualine" },
 	{ import = "jakob.general.nvim-tree" },
+	{ import = "jakob.general.cmake-tools" },
 	{ import = "jakob.general.which-key" },
 	{ import = "jakob.general.treesitter" },
 	{ import = "jakob.general.snacks" },
-    -- { import = "jakob.general.obsidian" },
+	-- { import = "jakob.general.obsidian" },
 	{ import = "jakob.general.indent-blankline" },
-    -- { import = "jakob.general.zen-mode" },
-        
-    { "indent-o-matic" },
+	-- { import = "jakob.general.zen-mode" },
+
+	{ "indent-o-matic" },
 	{ "markview.nvim" },
 	{ "dressing.nvim" },
 	{ "vim-tmux-navigator" },
-	 
+
 	{
 		"hologram.nvim",
 		config = true,
