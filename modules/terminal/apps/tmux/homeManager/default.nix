@@ -69,8 +69,8 @@ in {
       set-option -g renumber-windows on
 
       # Shift Alt vim keys to switch windows
-      bind -r previous-window
-      bind -r next-window
+      bind -r h previous-window
+      bind -r l next-window
 
       # Better window and pane management
       bind -r c new-window -c "#{pane_current_path}"
