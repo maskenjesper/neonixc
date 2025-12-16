@@ -88,6 +88,7 @@
 
     # Office
     masterpdfeditor
+    pdf4qt
 
     # Dev
 
