@@ -6,8 +6,8 @@
     ../../modules/desktop-environments/hyprland/nixos
     ../../modules/desktop-environments/common/nixos
     ../../modules/features/appimage/nixos
+    ../../modules/features/kanata/nixos
     ../../modules/hardware/keyboard/keymap/nixos
-    ../../modules/hardware/keyboard/xremap/nixos
     ../../modules/apps/dolphin/nixos
     ../../modules/services/syncthing/nixos
   ];
