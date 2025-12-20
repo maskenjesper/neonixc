@@ -1,16 +1,15 @@
 { pkgs, inputs, ... }: { 
   imports = [
-    ./hardware-configuration.nix 
+    ./hardware-configuration.nix
+    ../../modules/base/nixos
 
-    ../../system/common
-    ../../system/desktop-environments/hyprland
-    ../../system/apps/_1password
-    ../../system/apps/teamviewer
-    ../../system/features/adb
-    ../../system/features/appimage
-    ../../system/hardware/keyboard/keymap
-    ../../system/hardware/keyboard/xremap
-    ../../system/services/syncthing
+    ../../modules/desktop-environments/hyprland/nixos
+    ../../modules/desktop-environments/common/nixos
+    ../../modules/features/appimage/nixos
+    ../../modules/hardware/keyboard/keymap/nixos
+    ../../modules/hardware/keyboard/xremap/nixos
+    ../../modules/apps/dolphin/nixos
+    ../../modules/services/syncthing/nixos
   ];
 
   networking.hostName = "voyager"; # Define your hostname.
