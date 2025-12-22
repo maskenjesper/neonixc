@@ -86,30 +86,30 @@
           )
 
           (deflayer base
-            esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-            XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   bspc
-            tab   q    w    e    r    t    y    u    i    o    p    XX   XX   XX
-            @caps @a   @s   @d   @f   g    h    @j   @k   @l   @;   '    XX
-            XX    z    x    c    v    b    n    m    ,    .    /    XX
-            XX    XX   @tab           @sym           ret  XX   XX
+            esc   f1   f2   f3   f4   f5      f6   f7   f8   f9   f10  f11  f12
+            XX    XX   XX   XX   XX   XX      XX   XX   XX   XX   XX   XX   XX   bspc
+            XX    q    w    e    r    t       y    u    i    o    p    XX   XX   XX
+            @caps @a   @s   @d   @f   g       h    @j   @k   @l   @;   '    XX
+            XX    z    x    c    v    b       n    m    ,    .    /    XX
+            XX    XX   @tab           @sym              ret  XX   XX
           )
 
           (deflayer symbols
-            esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-            _    _     _    _    _    _    _    _    _    _    _    _    _    _
-            _    S-1   S-2  [    ]    S-5  S-6  7    8    9    S-\  _    _    _
-            grv  S-grv S--  S-9  S-0  =    S-7  4    5    6    0    S-4  _
-            _    S-3   -    S-[  S-]  S-=  S-8  1    2    3    \    _
-            _    _     _              _              _    _    _
+            esc  f1    f2   f3   f4   f5      f6   f7   f8   f9   f10  f11  f12
+            _    _     _    _    _    _       _    _    _    _    _    _    _    _
+            _    S-1   S-2  [    ]    S-5     S-6  7    8    9    S-\  _    _    _
+            grv  S-grv S--  S-9  S-0  =       S-7  4    5    6    0    S-4  _
+            _    S-3   -    S-[  S-]  S-=     S-8  1    2    3    \    _
+            _    _     _              _                 _    _    _
           )
 
           (deflayer arrow
-            esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-            _    _    _    _    _    _    _    _    _    _     _    _    _    _
-            _    _    _    _    _    _    _    _    _    _     _    _    _    _
-            _    _    _    _    _    _    left down up   right _    _    _
-            _    _    _    _    _    _    _    _    _    _     _    _
-            _    _    _              _              _    _     _
+            esc  f1   f2   f3   f4   f5       f6   f7   f8   f9   f10  f11  f12
+            _    _    _    _    _    _        _    _    _    _     _    _    _    _
+            _    _    _    _    _    _        _    _    _    _     _    _    _    _
+            _    _    _    _    _    _        left down up   right _    _    _
+            _    _    _    _    _    _        _    _    _    _     _    _
+            _    _    _              _                  _    _     _
           )
         '';
       };
