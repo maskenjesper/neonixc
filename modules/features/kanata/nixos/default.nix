@@ -87,11 +87,11 @@
 
           (deflayer base
             esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-            _     _    _    _    _    _    _    _    _    _    _    _    _    bspc
-            tab   q    w    e    r    t    y    u    i    o    p    _    _    _
-            @caps @a   @s   @d   @f   g    h    @j   @k   @l   @;   '    _
-            _     z    x    c    v    b    n    m    ,    .    /    _
-            _     _    @tab           @sym           ret  _    _
+            XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   bspc
+            tab   q    w    e    r    t    y    u    i    o    p    XX   XX   XX
+            @caps @a   @s   @d   @f   g    h    @j   @k   @l   @;   '    XX
+            XX    z    x    c    v    b    n    m    ,    .    /    XX
+            XX    XX   @tab           @sym           ret  XX   XX
           )
 
           (deflayer symbols
