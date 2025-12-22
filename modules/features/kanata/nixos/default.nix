@@ -87,12 +87,11 @@
 
           (deflayer base
             esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-            grv   1    2    3    4    5    6    7    8    9    0    -    =    bspc
-            tab   q    w    e    r    t    y    u    i    o    p    [    ]    \
-            @caps @a   @s   @d   @f   g    h    @j   @k   @l   @;   '    ret
-            ;;@caps a    s    d    f    g    h    j    k    l    ;    '    ret
-            lsft  z    x    c    v    b    n    m    ,    .    /    rsft
-            lctl  lmet @tab           @sym           ralt rmet rctl
+            _     _    _    _    _    _    _    _    _    _    _    _    _    bspc
+            tab   q    w    e    r    t    y    u    i    o    p    _    _    _
+            @caps @a   @s   @d   @f   g    h    @j   @k   @l   @;   '    _
+            _     z    x    c    v    b    n    m    ,    .    /    _
+            _     _    @tab           @sym           ret  _    _
           )
 
           (deflayer symbols
@@ -100,7 +99,7 @@
             _    _     _    _    _    _    _    _    _    _    _    _    _    _
             _    S-1   S-2  [    ]    S-5  S-6  7    8    9    S-\  _    _    _
             grv  S-grv S--  S-9  S-0  =    S-7  4    5    6    0    S-4  _
-            _    S-3   -    {    }    S-=  S-8  1    2    3    \    _
+            _    S-3   -    S-[  S-]  S-=  S-8  1    2    3    \    _
             _    _     _              _              _    _    _
           )
 
