@@ -34,6 +34,7 @@
 
     # Office
     masterpdfeditor
+    gedit
 
     # Dev
     
