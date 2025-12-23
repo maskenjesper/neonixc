@@ -7,13 +7,12 @@
       else pkgs.ghostty;
 
     # Enable for whichever shell you plan to use!
-    enableBashIntegration = true;
+    # enableBashIntegration = true;
     enableFishIntegration = true;
-    enableZshIntegration = true;
+    # enableZshIntegration = true;
 
     settings = {
       font-size = 15;
-      theme = "Abernathy";
       font-family = "Fira Code Nerd Font";
       background-opacity = "0.9";
     };
