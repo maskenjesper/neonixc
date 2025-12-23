@@ -16,6 +16,7 @@
     ../../../modules/terminal/emulators/ghostty/homeManager
     ../../../modules/terminal/shells/fish/homeManager
     ../../../modules/apps/zen-browser/homeManager
+    ../../../modules/apps/codeblocks/homeManager
   ];
 
   home.username = "jakob";
@@ -40,8 +41,6 @@
     gedit
 
     # Dev
-    codeblocksFull
-    gcc
 
     # Studies
     anki-bin
