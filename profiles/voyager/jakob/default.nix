@@ -40,6 +40,7 @@
     gedit
 
     # Dev
+    codeblocks
 
     # Studies
     anki-bin
