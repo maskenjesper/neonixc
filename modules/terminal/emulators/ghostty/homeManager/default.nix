@@ -12,9 +12,9 @@
     enableZshIntegration = true;
 
     settings = {
+      font-size = 15;
       theme = "Abernathy";
       font-family = "Fira Code Nerd Font";
-      font-size = 15;
       background-opacity = "0.9";
     };
   };
