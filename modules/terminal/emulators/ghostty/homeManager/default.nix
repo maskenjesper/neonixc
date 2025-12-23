@@ -21,7 +21,7 @@
       custom-shader = [
         "./shaders/cursor_smear_fade.glsl"
         # "./shaders/cursor_blaze.glsl"
-        "./shaders/cursor_blaze_no_trail.glsl"
+        # "./shaders/cursor_blaze_no_trail.glsl"
       ];
       font-size = 15;
       font-family = "Fira Code Nerd Font";
