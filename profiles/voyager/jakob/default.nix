@@ -40,7 +40,7 @@
     gedit
 
     # Dev
-    codeblocks
+    codeblocksFull
     gcc
 
     # Studies
