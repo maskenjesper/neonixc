@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-
   home.file.".config/ghostty" = {
     source = ./dotfiles;
     recursive = true;
@@ -19,6 +18,9 @@
     # enableZshIntegration = true;
 
     settings = {
+      custom-shader = [
+        "shaders/cursor_smear.glsl"
+      ];
       font-size = 15;
       font-family = "Fira Code Nerd Font";
       background-opacity = "0.9";
