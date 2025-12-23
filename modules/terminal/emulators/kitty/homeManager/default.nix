@@ -19,6 +19,8 @@
     window_padding_width = 0;
     background_obacity = "0.9";
     background_blur = 5;
+    font_family = "Fira Code";
+    font_size = 15;
     # symbol_map = let
     #   mappings = [
     #     "U+23FB-U+23FE"
