@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+
+  home.file.".config/ghostty" = {
+    source = ./dotfiles;
+    recursive = true;
+  };
+
   stylix.targets.ghostty.enable = true;
   programs.ghostty = {
     enable = true;
