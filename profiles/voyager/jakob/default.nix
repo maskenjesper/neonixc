@@ -1,5 +1,8 @@
-{ pkgs, inputs, ... }: 
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ../../../modules/base/homeManager
 
@@ -10,6 +13,7 @@
     ../../../modules/terminal/apps/gh/homeManager
     ../../../modules/terminal/apps/direnv/homeManager
     ../../../modules/terminal/emulators/kitty/homeManager
+    ../../../modules/terminal/emulators/ghostty/homeManager
     ../../../modules/terminal/shells/fish/homeManager
     ../../../modules/apps/zen-browser/homeManager
   ];
@@ -25,7 +29,6 @@
     obsidian
     cool-retro-term
 
-
     # Media
     vlc
     audacity
@@ -37,7 +40,6 @@
     gedit
 
     # Dev
-    
 
     # Studies
     anki-bin
@@ -51,11 +53,10 @@
 
     # Music
     spotify
-            
+
     # Productivity
     pomodoro-gtk
     blanket
-
   ];
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
