@@ -19,6 +19,7 @@
     window_padding_width = 0;
     background_obacity = "0.9";
     background_blur = 5;
+    cursor_trail = 1;
     font_family = "Fira Code";
     font_size = 15;
     # symbol_map = let
