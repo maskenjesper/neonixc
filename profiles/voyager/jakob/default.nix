@@ -41,6 +41,7 @@
 
     # Dev
     codeblocks
+    gcc
 
     # Studies
     anki-bin
