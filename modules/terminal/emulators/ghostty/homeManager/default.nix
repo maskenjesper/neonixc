@@ -19,7 +19,8 @@
 
     settings = {
       custom-shader = [
-        "./shaders/manga_slash.glsl"
+        "./shaders/cursor_smear_fade.glsl"
+        "./shaders/cursor_blaze.glsl"
       ];
       font-size = 15;
       font-family = "Fira Code Nerd Font";
