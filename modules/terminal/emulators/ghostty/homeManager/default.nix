@@ -13,7 +13,9 @@
 
     settings = {
       theme = "Abernathy";
-      background-opacity = "0.95";
+      font-family = "Fira Code Nerd Font";
+      font-size = 15;
+      background-opacity = "0.9";
     };
   };
 }
