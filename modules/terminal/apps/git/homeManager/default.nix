@@ -6,6 +6,9 @@
     extraConfig = {
       init.defaultBranch = "main";
     };
+    settings = {
+      pull.rebase = false;
+    };
   };
   programs.lazygit.enable = true;
 }
