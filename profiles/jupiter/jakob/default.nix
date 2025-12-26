@@ -28,6 +28,9 @@
   # For packages that need no configuration (yet...)
   home.packages = with pkgs; [
     # Trying out
+    clang
+    jetbrains.clion
+    cheese
     hardinfo2
     teams-for-linux
     tree

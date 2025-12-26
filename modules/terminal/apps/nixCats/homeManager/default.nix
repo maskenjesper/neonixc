@@ -61,6 +61,12 @@ in {
         openscad-lsp
 
         arduino-language-server
+
+        clang
+        clang-tools
+        cmake-language-server
+        cmake-format
+        cmake-lint
       ];
 
       startupPlugins.general = with pkgs.vimPlugins; [
@@ -77,6 +83,8 @@ in {
       ];
 
       optionalPlugins.general = with pkgs.vimPlugins; [
+        cmake-tools-nvim
+
         vim-fugitive
         gitsigns-nvim
         indent-o-matic

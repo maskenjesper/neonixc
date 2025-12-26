@@ -49,7 +49,7 @@ Variants {
         }
 
         // TODO: Edge detection seems to work but making a window floating doesn't
-        // trigger a update it seems
+        // trigger an update it seems
         function panelEdgeTouched(toplevel: HyprlandToplevel, monitor: HyprlandMonitor): bool {
             Hyprland.refreshToplevels();
             if (toplevel.wayland == null)
@@ -195,6 +195,7 @@ Variants {
                                 bottom: parent.bottom
                             }
                         }
+
                     }
                 }
             }

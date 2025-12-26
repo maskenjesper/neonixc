@@ -1,6 +1,6 @@
 {...}: {
   imports = [
     ../wofi/homeManager
-    ../stylix/homeManager
+    ../system-utils/stylix/homeManager
   ];
 }

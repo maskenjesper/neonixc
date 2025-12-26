@@ -36,22 +36,16 @@ local servers = {
 		filetypes = { "elixir" },
 	},
 	gopls = {},
-
 	dartls = {},
-
 	bashls = {},
-
 	fish_lsp = {},
-
 	yamlls = {},
-
 	hyprls = {},
-
 	csharp_ls = {},
-
 	qmlls = {},
-
 	openscad_lsp = {},
+	clangd = {},
+	cmake = {},
 }
 
 -- Set the default root marker for all LSP clients.
@@ -74,30 +68,3 @@ for server_name, cfg in pairs(servers) do
 	vim.lsp.enable(server_name)
 end
 
--- require("lze").load({
---     {
---         "nvim-lspconfig",
---         event = "FileType",
---         load = (require("nixCatsUtils").isNixCats and vim.cmd.packadd) or function(name)
---             vim.cmd.packadd(name)
---             vim.cmd.packadd("mason.nvim")
---             vim.cmd.packadd("mason-lspconfig.nvim")
---         end,
---         after = function(plugin)
--- for server_name, cfg in pairs(servers) do
---     require("lspconfg")[server_name].setup({
---     vim.lsp.config(server_name).setup({
---     vim.lsp.config(server_name, {
---
---         capabilities = require("jakob.lsp.caps-on_attach").get_capabilities(server_name),
---         -- this line is interchangeable with the above LspAttach autocommand
---         on_attach = require("jakob.lsp.caps-on_attach").on_attach,
---         settings = cfg,
---         filetypes = (cfg or {}).filetypes,
---         cmd = (cfg or {}).cmd,
---         root_pattern = (cfg or {}).root_pattern,
---     })
--- end
---         end,
---     },
--- })
