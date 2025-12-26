@@ -8,12 +8,13 @@ pushd ~/neonixc/ || exit
 git add --all
 
 echo ====================== Running nixos-rebuild ======================
-sudo nixos-rebuild switch --impure --flake . --show-trace -L -v 
+# sudo nixos-rebuild switch --impure --flake . --show-trace -L -v
+nh os switch ~/neonixc
 
 if [[ $? -eq 0 ]]; then
-    echo Sync successful 
+    echo Sync successful
 else
-    echo Rebuild failed. Aborting...    
+    echo Rebuild failed. Aborting...
 fi
 
 popd || exit

@@ -8,10 +8,11 @@ pushd ~/neonixc/ || exit
 git add --all
 
 echo ====================== Running home-manager ======================
-home-manager switch --impure --flake . -b backup --show-trace -L -v
+# home-manager switch --impure --flake . -b backup --show-trace -L -v
+nh home switch ~/neonixc
 
 if [[ $? -eq 0 ]]; then
-    echo Sync successful 
+    echo Sync successful
 else
     echo Home manager failed. Aborting...
 fi
