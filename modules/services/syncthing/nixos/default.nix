@@ -32,27 +32,29 @@ in {
       guiAddress = "0.0.0.0:8384";
       overrideDevices = true;
       overrideFolders = true;
-      devices = cfg.devices;
-      folders = {
-        "second-brain" = {
-          path = "/home/jakob/second-brain";
-          devices = cfg.second-brain.devices;
-          versioning = {
-            type = "staggered";
-            params = {
-              cleanInterval = "3600";
-              maxAge = "15768000";
+      settings = {
+        devices = cfg.devices;
+        folders = {
+          "second-brain" = {
+            path = "/home/jakob/second-brain";
+            devices = cfg.second-brain.devices;
+            versioning = {
+              type = "staggered";
+              params = {
+                cleanInterval = "3600";
+                maxAge = "15768000";
+              };
             };
           };
-        };
-        "passwords" = {
-          path = "/home/jakob/passwords";
-          devices = cfg.passwords.devices;
-          versioning = {
-            type = "staggered";
-            params = {
-              cleanInterval = "3600";
-              maxAge = "15768000";
+          "passwords" = {
+            path = "/home/jakob/passwords";
+            devices = cfg.passwords.devices;
+            versioning = {
+              type = "staggered";
+              params = {
+                cleanInterval = "3600";
+                maxAge = "15768000";
+              };
             };
           };
         };
