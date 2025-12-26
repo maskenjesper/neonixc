@@ -1,12 +1,10 @@
 {pkgs, ...}: {
   programs.git = {
     enable = true;
-    userName = "jakob";
-    userEmail = "noreply@email.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
     settings = {
+      init.defaultBranch = "main";
+      user.name = "jakob";
+      user.email = "noreply@email.com";
       pull.rebase = false;
     };
   };
