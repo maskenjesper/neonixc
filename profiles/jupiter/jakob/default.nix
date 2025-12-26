@@ -14,6 +14,7 @@
     ../../../modules/terminal/apps/gh/homeManager
     ../../../modules/terminal/apps/direnv/homeManager
     ../../../modules/terminal/emulators/kitty/homeManager
+    ../../../modules/terminal/emulators/ghostty/homeManager
     ../../../modules/terminal/shells/fish/homeManager
     ../../../modules/apps/zen-browser/homeManager
   ];
@@ -39,11 +40,11 @@
     keepassxc
     obsidian
     cool-retro-term
-    
+
     ventoy-full-gtk
 
     qbittorrent
-    
+
     sequoia
 
     lua
