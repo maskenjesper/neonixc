@@ -1,4 +1,8 @@
 {...}: {
+  imports = [
+    ../../features/nh/nixos
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   # Bootloader.

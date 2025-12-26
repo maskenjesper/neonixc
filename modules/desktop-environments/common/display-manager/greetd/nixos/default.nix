@@ -1,11 +1,10 @@
-{ config, lib, pkgs, ... }:
-{
-    services.greetd = {
-        enable = true;
-        settings = {
-            default_session = {
-                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd \"uwsm start default\"";
-            };
-        };
+{pkgs, ...}: {
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --cmd \"uwsm start default\"";
+      };
     };
+  };
 }
