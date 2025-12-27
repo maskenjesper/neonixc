@@ -1,12 +1,6 @@
-{ pkgs, ... }: 
-{
+{pkgs, ...}: {
   imports = [
-    ../../../user/common
-    ../../../user/terminal/shells/fish
-    ../../../user/terminal/apps/tmux
-    ../../../user/terminal/apps/git
-    ../../../user/terminal/apps/gh
-    ../../../user/terminal/apps/nixCats
+    ../../../modules/base/homeManager
   ];
 
   home.username = "user";
@@ -14,7 +8,6 @@
 
   # For packages that need no configuration (yet...)
   home.packages = with pkgs; [
-
   ];
 
   home.stateVersion = "24.05"; # Please read the comment before changing.

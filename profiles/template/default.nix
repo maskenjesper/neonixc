@@ -1,10 +1,8 @@
-{ pkgs, ... }: { 
+{pkgs, ...}: {
   imports = [
-    ./hardware-configuration.nix 
+    ./hardware-configuration.nix
 
-    ../../system/common
-    ../../system/hardware/keyboard/keymap
-    ../../system/hardware/keyboard/xremap
+    ../../modules/base/nixos
   ];
 
   networking.hostName = "hostname"; # Define your hostname.
