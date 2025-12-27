@@ -14,6 +14,7 @@
         ];
     });
     settings = {
+      prompt = "Search...";
       image_size = 48;
       columns = 3;
       allow_images = true;
