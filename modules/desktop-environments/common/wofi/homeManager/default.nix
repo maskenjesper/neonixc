@@ -17,7 +17,7 @@
       prompt = "Search...";
       normal_window = false;
       image_size = 48;
-      columns = 1;
+      columns = 2;
       allow_images = true;
       insensitive = true;
       run-always_parse_args = true;
