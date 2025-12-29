@@ -11,6 +11,7 @@
 
     ../../modules/terminal/apps/hello/nixos
     ../../modules/desktop-environments/common/nixos
+    ../../modules/features/gaming/nixos
     ../../modules/apps/teamviewer/nixos
     ../../modules/features/virtualization/nixos
     ../../modules/features/appimage/nixos
