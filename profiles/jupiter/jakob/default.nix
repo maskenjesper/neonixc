@@ -31,6 +31,7 @@
   # For packages that need no configuration (yet...)
   home.packages = with pkgs; [
     # Trying out
+    anydesk
     clang
     jetbrains.clion
     cheese
