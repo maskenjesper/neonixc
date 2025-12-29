@@ -1,8 +1,10 @@
 {...}: {
-  virtualisation.docker.enable = true;
   users.extraGroups.docker.members = ["jakob"];
-  virtualisation.docker.rootless = {
+  virtualisation.docker = {
     enable = true;
-    setSocketVariable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
   };
 }

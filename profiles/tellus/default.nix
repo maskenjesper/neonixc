@@ -20,6 +20,7 @@
     ../../modules/apps/dolphin/nixos
     ../../modules/services/ssh/nixos
     ../../modules/features/nix_ld/nixos
+    ../../modules/features/docker/nixos
   ];
 
   networking.hostName = "tellus"; # Define your hostname.
