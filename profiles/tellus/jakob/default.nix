@@ -30,6 +30,7 @@
   # For packages that need no configuration (yet...)
   home.packages = with pkgs; [
     # Trying out
+    anydesk
     tree
     gedit
     nixpkgs-vet
