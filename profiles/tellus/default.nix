@@ -7,7 +7,6 @@
     ./hardware-configuration.nix
     ../../modules/base/nixos
 
-    ../../modules/hardware/nvidia/nixos
     ../../modules/services/ssh/nixos
     ../../modules/features/nix_ld/nixos
     ../../modules/features/docker/nixos
