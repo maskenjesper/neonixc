@@ -1,9 +1,5 @@
+{ config, pkgs, lib, ... }:
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # Automatically creates a loader in /lib/* to avoid patching stuff
@@ -27,7 +23,7 @@
       util-linux
       xz
       systemd
-
+      
       # My own additions
       xorg.libXcomposite
       xorg.libXtst
@@ -50,7 +46,7 @@
 
       # Inspired by steam
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/st/steam/package.nix#L36-L85
-      networkmanager
+      networkmanager      
       vulkan-loader
       libgbm
       libdrm
@@ -59,7 +55,7 @@
       pciutils
       zenity
       # glibc_multi.bin # Seems to cause issue in ARM
-
+      
       # # Without these it silently fails
       xorg.libXinerama
       xorg.libXcursor
@@ -79,7 +75,7 @@
       ffmpeg
       # Only libraries are needed from those two
       libudev0-shim
-
+      
       # needed to run unity
       gtk3
       icu
@@ -91,7 +87,7 @@
       # it will segfault when opening files if you don’t do:
       # export XDG_DATA_DIRS=/nix/store/0nfsywbk0qml4faa7sk3sdfmbd85b7ra-gsettings-desktop-schemas-43.0/share/gsettings-schemas/gsettings-desktop-schemas-43.0:/nix/store/rkscn1raa3x850zq7jp9q3j5ghcf6zi2-gtk+3-3.24.35/share/gsettings-schemas/gtk+3-3.24.35/:/nix/store/a06y8w8ibilh2f5jwj4d3c565mgxhvgb-gnome-console-48.0.1/share:/nix/store/03iq7iqv9avzxhxpf791n0asqg11rj3a-gsettings-desktop-schemas-48.0/share/gsettings-schemas/gsettings-desktop-schemas-48.0:/nix/store/hviykw3vn2gbvfjqlk9sgha9fwkrlk49-gtk4-4.18.6/share/gsettings-schemas/gtk4-4.18.6:/nix/store/a06y8w8ibilh2f5jwj4d3c565mgxhvgb-gnome-console-48.0.1/share/gsettings-schemas/gnome-console-48.0.1:/nix/store/sdr0q7c4l5675zxd9gi1bw6balk8yh06-gnome-mimeapps/share:/nix/store/pk6xgfyflh9ayhmrv7kk1igjsa6fcgfz-desktops/share:/home/jakob/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/home/jakob/.nix-profile/share:/nix/profile/share:/home/jakob/.local/state/nix/profile/share:/etc/profiles/per-user/jakob/share:/nix/var/nix/profiles/default/share:/run/current-system/sw/share:/nix/store/j68fhlkbsjawiv8m1xrsvxx563p51kdj-gnome-shell-48.4/share/gsettings-schemas/gnome-shell-48.4:/nix/store/nbzamv1nmxjh28ps2a86fwrmbkir9gca-gnome-session-48.0/share:/nix/store/03iq7iqv9avzxhxpf791n0asqg11rj3a-gsettings-desktop-schemas-48.0/share/gsettings-schemas/gsettings-desktop-schemas-48.0:/nix/store/7a7q00p33dfr35x3j9hqkklmlvnhv5rn-gtk+3-3.24.49/share/gsettings-schemas/gtk+3-3.24.49:/nix/store/7fsgqrszz630k8dyb64hmb9c8dxqi4mg-gnome-settings-daemon-48.1/share/gsettings-schemas/gnome-settings-daemon-48.1:/nix/store/nbzamv1nmxjh28ps2a86fwrmbkir9gca-gnome-session-48.0/share/gsettings-schemas/gnome-session-48.0:/nix/store/j68fhlkbsjawiv8m1xrsvxx563p51kdj-gnome-shell-48.4/share
       # other issue: (Unity:377230): GLib-GIO-CRITICAL **: 21:09:04.706: g_dbus_proxy_call_sync_internal: assertion 'G_IS_DBUS_PROXY (proxy)' failed
-
+      
       # Verified games requirements
       xorg.libXt
       xorg.libXmu
@@ -102,7 +98,7 @@
       glew110
       libidn
       tbb
-
+      
       # Other things from runtime
       flac
       freeglut
@@ -151,5 +147,6 @@
       fuse
       e2fsprogs
     ];
-  };
+  };  
+
 }
