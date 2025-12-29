@@ -12,6 +12,8 @@
 
     targets.wezterm.enable = false;
     targets.mako.enable = false;
+    targets.ghostty.enable = true;
+    targets.kitty.enable = true;
 
     polarity = "dark";
 

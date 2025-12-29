@@ -8,8 +8,6 @@
   ];
   stylix = {
     enable = true;
-    targets.ghostty.enable = true;
-    targets.kitty.enable = true;
 
     polarity = "dark";
 

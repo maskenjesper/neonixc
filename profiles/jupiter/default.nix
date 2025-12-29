@@ -28,6 +28,15 @@
 
   networking.hostName = "jupiter"; # Define your hostname.
 
+  programs.ssh = {
+    extraConfig = "
+      Host tellus
+        Hostname 192.168.1.109
+        Port 6845 
+        User jakob
+    ";
+  };
+
   # Disable kernel messages in the console (tty)
   # To avoid the error message:
   #     usb 1-4: device descriptor read/all, error -110
