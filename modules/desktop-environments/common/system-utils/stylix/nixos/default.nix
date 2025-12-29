@@ -8,18 +8,17 @@
   ];
   stylix = {
     enable = true;
+    targets.ghostty.enable = true;
+    targets.kitty.enable = true;
 
     polarity = "dark";
 
     image = ../../../../../assets/active_wallpaper.jpg;
-    
 
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/pandora.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
     base16Scheme = ./kanagawa-dragon.yaml;
-
-
 
     cursor = {
       package = pkgs.bibata-cursors;

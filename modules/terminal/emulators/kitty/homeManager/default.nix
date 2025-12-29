@@ -46,6 +46,4 @@
     # in
     #   (builtins.concatStringSep "," mappings) + " Symbols Nerd Fonts";
   };
-
-  stylix.targets.kitty.enable = true;
 }
