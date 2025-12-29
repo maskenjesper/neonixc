@@ -34,6 +34,8 @@
         Hostname 192.168.1.109
         Port 6845 
         User jakob
+        IdentitiesOnly yes
+        IdentityFile ~/.ssh/tellus
     ";
   };
 
