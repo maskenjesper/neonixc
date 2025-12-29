@@ -17,11 +17,12 @@
     ../../modules/hardware/keyboard/keymap/nixos
     ../../modules/hardware/nvidia/nixos
     ../../modules/apps/dolphin/nixos
+    ../../modules/services/ssh/nixos
   ];
 
   networking.hostName = "tellus"; # Define your hostname.
-  
-    # Enable the X11 windowing system.
+
+  # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
