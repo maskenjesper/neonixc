@@ -30,15 +30,6 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  services.flatpak.enable = true;
-
-  # Automatically delete generations older than 7 days.
-  nix.gc = {
-    automatic = true;
-    dates = "weelky";
-    options = "--delete-older-than 7d";
-  };
-
   # Use flakes
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];

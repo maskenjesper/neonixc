@@ -7,30 +7,16 @@
     ./hardware-configuration.nix
     ../../modules/base/nixos
 
-    ../../modules/desktop-environments/common/nixos
-
-    ../../modules/terminal/apps/hello/nixos
-    ../../modules/desktop-environments/common/nixos
-    ../../modules/features/gaming/nixos
     ../../modules/apps/teamviewer/nixos
     ../../modules/features/virtualization/nixos
     ../../modules/features/appimage/nixos
-    ../../modules/hardware/keyboard/keymap/nixos
     ../../modules/hardware/nvidia/nixos
-    ../../modules/apps/dolphin/nixos
     ../../modules/services/ssh/nixos
     ../../modules/features/nix_ld/nixos
     ../../modules/features/docker/nixos
   ];
 
   networking.hostName = "tellus"; # Define your hostname.
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
   # Disable kernel messages in the console (tty)
   # To avoid the error message:
