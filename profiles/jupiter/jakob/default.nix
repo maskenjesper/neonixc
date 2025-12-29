@@ -6,6 +6,8 @@
   imports = [
     ../../../modules/base/homeManager
 
+    ../../../modules/desktop-environments/common/homeManager
+
     ../../../modules/terminal/apps/hello/homeManager
     ../../../modules/desktop-environments/hyprland/homeManager
     ../../../modules/terminal/apps/nixCats/homeManager

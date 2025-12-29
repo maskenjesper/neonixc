@@ -6,13 +6,15 @@
   imports = [
     ../../../modules/base/homeManager
 
+    ../../../modules/desktop-environments/common/homeManager
+
     ../../../modules/terminal/apps/hello/homeManager
-    ../../../modules/desktop-environments/hyprland/homeManager
     ../../../modules/terminal/apps/nixCats/homeManager
     ../../../modules/terminal/apps/tmux/homeManager
     ../../../modules/terminal/apps/git/homeManager
     ../../../modules/terminal/apps/gh/homeManager
     ../../../modules/terminal/apps/direnv/homeManager
+    ../../../modules/terminal/emulators/kitty/homeManager
     ../../../modules/terminal/emulators/ghostty/homeManager
     ../../../modules/terminal/shells/fish/homeManager
     ../../../modules/apps/zen-browser/homeManager

@@ -7,6 +7,8 @@
     ./hardware-configuration.nix
     ../../modules/base/nixos
 
+    ../../modules/desktop-environments/common/nixos
+
     ../../modules/terminal/apps/hello/nixos
     ../../modules/desktop-environments/hyprland/nixos
     ../../modules/desktop-environments/common/nixos

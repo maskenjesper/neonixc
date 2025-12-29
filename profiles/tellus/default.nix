@@ -7,8 +7,9 @@
     ./hardware-configuration.nix
     ../../modules/base/nixos
 
+    ../../modules/desktop-environments/common/nixos
+
     ../../modules/terminal/apps/hello/nixos
-    ../../modules/desktop-environments/hyprland/nixos
     ../../modules/desktop-environments/common/nixos
     ../../modules/apps/teamviewer/nixos
     ../../modules/features/virtualization/nixos
@@ -19,6 +20,13 @@
   ];
 
   networking.hostName = "tellus"; # Define your hostname.
+  
+    # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Disable kernel messages in the console (tty)
   # To avoid the error message:
