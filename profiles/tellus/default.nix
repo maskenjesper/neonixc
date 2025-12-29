@@ -1,41 +1,41 @@
-{ pkgs, ... }: { 
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
-    ./hardware-configuration.nix 
+    ./hardware-configuration.nix
+    ../../modules/base/nixos
 
-    ../../system/common
-    ../../system/desktop-environments/hyprland
-    ../../system/apps/_1password
-    ../../system/apps/teamviewer
-    ../../system/features/adb
-    ../../system/features/gaming 
-    ../../system/features/virtualization
-    ../../system/features/appimage
-    ../../system/hardware/nvidia
-    ../../system/hardware/keyboard/keymap
-    ../../system/hardware/keyboard/xremap
-    ../../system/services/syncthing
+    ../../modules/terminal/apps/hello/nixos
+    ../../modules/desktop-environments/hyprland/nixos
+    ../../modules/desktop-environments/common/nixos
+    ../../modules/apps/teamviewer/nixos
+    ../../modules/features/virtualization/nixos
+    ../../modules/features/appimage/nixos
+    ../../modules/hardware/keyboard/keymap/nixos
+    ../../modules/hardware/nvidia/nixos
+    ../../modules/apps/dolphin/nixos
   ];
 
   networking.hostName = "tellus"; # Define your hostname.
 
-  syncthing = {
-      devices = {
-        "phone" = { id = "3Y7HXLU-57OAFNZ-MO5PJ2T-PY7MOPA-U6RHHGF-4BUQEGX-7JRNZBZ-Q4CAAAP"; };
-        "rpi" = { id = ""; };
-      };
-      passwords.devices = [ "phone" "rpi" ];
-      second-brain.devices = [ "phone" "rpi" ];
+  # Disable kernel messages in the console (tty)
+  # To avoid the error message:
+  #     usb 1-4: device descriptor read/all, error -110
+  # on the login screen.
+  # TODO: Figure out why this is happening.
+  boot.kernel.sysctl = {
+    "kernel.printk" = "3 3 3 3";
   };
 
-  systemd.services.display-manager.enable = false;
-
-  nix.settings.download-buffer-size = 1048576000; # 1GB 
+  nix.settings.download-buffer-size = 1048576000; # 1GB
 
   users.users.jakob = {
     isNormalUser = true;
     shell = pkgs.fish;
     description = "Jakob Olsson";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "dialout"];
     packages = [
       pkgs.home-manager
     ];
