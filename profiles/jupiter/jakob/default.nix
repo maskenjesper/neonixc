@@ -46,6 +46,7 @@
     atlauncher
     modrinth-app
     prismlauncher
+    jdk
 
     ventoy-full-gtk
 
