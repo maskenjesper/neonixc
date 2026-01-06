@@ -43,6 +43,9 @@
     keepassxc
     obsidian
     cool-retro-term
+    atlauncher
+    modrinth-app
+    prismlauncher
 
     ventoy-full-gtk
 
