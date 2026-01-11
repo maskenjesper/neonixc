@@ -47,6 +47,7 @@
     modrinth-app
     prismlauncher
     jdk
+    mcaselector
 
     ventoy-full-gtk
 
