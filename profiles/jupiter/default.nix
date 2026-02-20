@@ -48,6 +48,8 @@
     "kernel.printk" = "3 3 3 3";
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   syncthing = {
     devices = {
       "phone" = {id = "3Y7HXLU-57OAFNZ-MO5PJ2T-PY7MOPA-U6RHHGF-4BUQEGX-7JRNZBZ-Q4CAAAP";};
