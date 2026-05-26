@@ -8,6 +8,10 @@ output "HDMI-A-1" {
     mode "2560x1440@143.998"   // 2560x1440 @ 144 Hz (change refresh rate as desired)
     scale 1
     position x=0 y=0       // Place to the right of laptop screen
+    hot-corners {
+        bottom-left
+        bottom-right
+    }
 }
 
 // Laptop display (eDP-1)
@@ -15,6 +19,10 @@ output "eDP-1" {
     mode "1920x1080"     // 1920x1080 @ 59.999 Hz (preferred)
     scale 1
     position x=2560 y=0
+    hot-corners {
+        bottom-left
+        bottom-right
+    }
 }
 
 output "DP-1" {
@@ -23,12 +31,22 @@ output "DP-1" {
     mode "2560x1440"
     scale 1
     position x=0 y=0
+
+    hot-corners {
+        bottom-left
+        bottom-right
+    }
 }
 output "DP-2" {
     mode "2560x1440"
     scale 1
     position x=2560 y=-540
     transform "90"
+
+    hot-corners {
+        bottom-left
+        bottom-right
+    }
 
     layout {
         preset-column-widths {

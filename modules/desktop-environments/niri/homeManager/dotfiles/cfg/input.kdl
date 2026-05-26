@@ -7,8 +7,10 @@ input {
             //If you want to overwrite your keyboard layout,
             // uncomment the line below and change the layout accordingly.
             //layout "us" // Use the American keyboard layout
-            // layout "se"
+            layout "us,se"
+            options "grp:alt_space_toggle"
         }
+        track-layout "global"
         numlock // Enable numlock on startup
         repeat-delay 300
         repeat-rate 25
@@ -23,8 +25,8 @@ input {
     mouse {
         // If you want to disable Mouse Acceleration,
         // uncomment the lines below.
-        //accel-profile "flat"
-        //accel-speed 0.0
+        accel-profile "flat"
+        accel-speed 1
     }
 
     focus-follows-mouse // Automatically focus windows under the mouse pointer

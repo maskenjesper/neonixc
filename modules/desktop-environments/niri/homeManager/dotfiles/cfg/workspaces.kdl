@@ -1,11 +1,17 @@
-workspace "entertainment"
+workspace "entertainment" {
+    open-on-output "DP-1"
+}
 workspace "research"
-workspace "development"
+workspace "development" {
+    open-on-output "DP-1"
+}
 workspace "communication"
-workspace "gaming"
+workspace "gaming" {
+    open-on-output "DP-1"
+}
 workspace "notes"
 workspace "tools"
-workspace "w8"
 workspace "music"
 workspace "system"
+workspace "misc"
 

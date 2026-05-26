@@ -45,22 +45,28 @@ binds {
     Mod+CTRL+K                          { move-window-up; }
     Mod+CTRL+J                          { move-window-down; }
 
-    Mod+Shift+H                          { move-column-to-monitor-left; }
-    Mod+Shift+L                          { move-column-to-monitor-right; }
-    Mod+Shift+K                          { move-column-to-workspace-up; }
-    Mod+Shift+J                          { move-column-to-workspace-down; }
+    // Mod+Shift+H                          { move-column-to-monitor-left; }
+    // Mod+Shift+L                          { move-column-to-monitor-right; }
+    // Mod+Shift+K                          { move-column-to-workspace-up; }
+    // Mod+Shift+J                          { move-column-to-workspace-down; }
 
     // ─── Workspace Movement and Focus ───
 
     Mod+Y                         { focus-monitor-left; }
     Mod+O                         { focus-monitor-right; }
-    Mod+I                         { focus-workspace-up; }
-    Mod+U                         { focus-workspace-down; }
 
     Mod+CTRL+Y                    { move-workspace-to-monitor-left; }
     Mod+CTRL+O                    { move-workspace-to-monitor-right; }
-    Mod+CTRL+I                    { move-workspace-up; }
-    Mod+CTRL+U                    { move-workspace-down; }
+
+    // Mod+Y                         { focus-monitor-left; }
+    // Mod+O                         { focus-monitor-right; }
+    // Mod+I                         { focus-workspace-up; }
+    // Mod+U                         { focus-workspace-down; }
+
+    // Mod+CTRL+Y                    { move-workspace-to-monitor-left; }
+    // Mod+CTRL+O                    { move-workspace-to-monitor-right; }
+    // Mod+CTRL+I                    { move-workspace-up; }
+    // Mod+CTRL+U                    { move-workspace-down; }
 
     // ─── Named Workspaces ───
 
@@ -71,9 +77,9 @@ binds {
     Mod+5                               { focus-workspace "gaming"       ; }
     Mod+6                               { focus-workspace "notes"        ; }
     Mod+7                               { focus-workspace "tools"           ; }
-    Mod+8                               { focus-workspace "w8"           ; }
-    Mod+9                               { focus-workspace "music"        ; }
-    Mod+0                               { focus-workspace "system"       ; }
+    Mod+8                               { focus-workspace "music"           ; }
+    Mod+9                               { focus-workspace "system"        ; }
+    Mod+0                               { focus-workspace "misc"       ; }
 
     Mod+Shift+1                               { focus-workspace 1; }
     Mod+Shift+2                               { focus-workspace 2; }
@@ -93,9 +99,9 @@ binds {
     Mod+CTRL+5                         { move-window-to-workspace "gaming"       ; }
     Mod+CTRL+6                         { move-window-to-workspace "notes"        ; }
     Mod+CTRL+7                         { move-window-to-workspace "tools"           ; }
-    Mod+CTRL+8                         { move-window-to-workspace "w8"           ; }
-    Mod+CTRL+9                         { move-window-to-workspace "music"        ; }
-    Mod+CTRL+0                         { move-window-to-workspace "system"       ; }
+    Mod+CTRL+8                         { move-window-to-workspace "music"           ; }
+    Mod+CTRL+9                         { move-window-to-workspace "system"        ; }
+    Mod+CTRL+0                         { move-window-to-workspace "misc"       ; }
 
     //--------- Extra ----------//
     Mod+Q                               { close-window; }

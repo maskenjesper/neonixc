@@ -20,7 +20,7 @@
         border {
             on
 
-            width 2
+            width 1
 
             active-color "#ffffff"
             inactive-color "#000000"
@@ -30,7 +30,7 @@
         focus-ring {
             off
 
-            width 2
+            width 1
 
             active-color "#ffffff"
             inactive-color "#000000"

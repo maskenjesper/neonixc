@@ -13,6 +13,12 @@
     }
 
     window-rule {
+       match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+       default-floating-position x=10 y=10 relative-to="bottom-right"
+       open-focused false
+    }
+
+    window-rule {
        match app-id=r#"Minecraft.*"#
        open-on-workspace "gaming"
        variable-refresh-rate true
@@ -23,12 +29,6 @@
        match app-id=r#"cs2"#
        open-on-workspace "gaming"
        variable-refresh-rate true
-       open-focused false
-    }
-
-    window-rule {
-       match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-       default-floating-position x=10 y=10 relative-to="bottom-right"
        open-focused false
     }
 

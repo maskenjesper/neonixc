@@ -61,7 +61,7 @@
         "middleClickFollowMouse": false,
         "monitors": [
         ],
-        "mouseWheelAction": "none",
+        "mouseWheelAction": "workspace",
         "mouseWheelWrap": true,
         "outerCorners": false,
         "position": "top",
@@ -180,7 +180,15 @@
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
+                        "steam"
                     ]
+                },
+                {
+                    "displayMode": "forceOpen",
+                    "iconColor": "none",
+                    "id": "KeyboardLayout",
+                    "showIcon": false,
+                    "textColor": "none"
                 },
                 {
                     "hideWhenZero": false,
