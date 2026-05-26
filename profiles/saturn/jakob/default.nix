@@ -16,6 +16,8 @@
     ../../../modules/terminal/apps/lazygit/homeManager/dotfiles.nix
     ../../../modules/terminal/shells/fish/homeManager/dotfiles.nix
 
+    ../../../modules/apps/opencode/homeManager/dotfiles.nix
+
     ../../../modules/desktop-environments/niri/homeManager/dotfiles.nix
     ../../../modules/desktop-environments/noctalia/homeManager/dotfiles.nix
   ];
