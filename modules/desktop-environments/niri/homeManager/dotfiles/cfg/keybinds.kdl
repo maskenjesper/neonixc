@@ -12,7 +12,8 @@ binds {
     Mod+Return                          hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; }
     Mod+N                               hotkey-overlay-title="Open Editor: Neovide" { spawn "neovide"; }
     Mod+Space                           hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+B                               hotkey-overlay-title="Open Browser: firefox" { spawn "zen-browser"; }
+    Mod+A                               hotkey-overlay-title="Toggle noctalia bar" { spawn-sh "qs -c noctalia-shell ipc call bar toggle"; }
+    Mod+B                               hotkey-overlay-title="Open Browser" { spawn "vivaldi"; }
     Mod+Alt+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Mod+Alt+Q                        hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
 
@@ -44,6 +45,14 @@ binds {
     Mod+CTRL+L                          { move-column-right; }
     Mod+CTRL+K                          { move-window-up; }
     Mod+CTRL+J                          { move-window-down; }
+
+    Mod+Home                             { focus-column-first; }
+    Mod+End                              { focus-column-last; }
+    Mod+CTRL+Home                       { move-column-to-first; }
+    Mod+CTRL+End                        { move-column-to-last; }
+
+    Mod+Comma                           { consume-window-into-column; }
+    Mod+Period                          { expel-window-from-column; }
 
     // Mod+Shift+H                          { move-column-to-monitor-left; }
     // Mod+Shift+L                          { move-column-to-monitor-right; }
@@ -81,16 +90,16 @@ binds {
     Mod+9                               { focus-workspace "system"        ; }
     Mod+0                               { focus-workspace "misc"       ; }
 
-    Mod+Shift+1                               { focus-workspace 1; }
-    Mod+Shift+2                               { focus-workspace 2; }
-    Mod+Shift+3                               { focus-workspace 3; }
-    Mod+Shift+4                               { focus-workspace 4; }
-    Mod+Shift+5                               { focus-workspace 5; }
-    Mod+Shift+6                               { focus-workspace 6; }
-    Mod+Shift+7                               { focus-workspace 7; }
-    Mod+Shift+8                               { focus-workspace 8; }
-    Mod+Shift+9                               { focus-workspace 9; }
-    Mod+Shift+0                               { focus-workspace 10; }
+    // Mod+Shift+1                               { focus-workspace 1; }
+    // Mod+Shift+2                               { focus-workspace 2; }
+    // Mod+Shift+3                               { focus-workspace 3; }
+    // Mod+Shift+4                               { focus-workspace 4; }
+    // Mod+Shift+5                               { focus-workspace 5; }
+    // Mod+Shift+6                               { focus-workspace 6; }
+    // Mod+Shift+7                               { focus-workspace 7; }
+    // Mod+Shift+8                               { focus-workspace 8; }
+    // Mod+Shift+9                               { focus-workspace 9; }
+    // Mod+Shift+0                               { focus-workspace 10; }
 
     Mod+CTRL+1                         { move-window-to-workspace "entertainment"; }
     Mod+CTRL+2                         { move-window-to-workspace "research"     ; }
@@ -107,11 +116,6 @@ binds {
     Mod+Q                               { close-window; }
     Mod+TAB                             { focus-workspace-previous; }
 
-    Mod+Home                             { focus-column-first; }
-    Mod+End                              { focus-column-last; }
-    Mod+Shift+Home                       { move-column-to-first; }
-    Mod+Shift+End                        { move-column-to-last; }
-
     Mod+WheelScrollRight                { focus-column-right; }
     Mod+WheelScrollLeft                 { focus-column-left; }
 
@@ -122,13 +126,11 @@ binds {
 
     // ─── Layout Controls ───
     Mod+C                               { center-column; }
-    Mod+R                               { switch-preset-column-width; }
+    Mod+M                               { switch-preset-column-width; }
     Mod+Minus                           { set-column-width "-10%"; }
     Mod+Equal                           { set-column-width "+10%"; }
     Mod+Shift+Minus                     { set-window-height "-10%"; }
     Mod+Shift+Equal                     { set-window-height "+10%"; }
-    Mod+Comma                           { consume-window-into-column; }
-    Mod+Period                          { expel-window-from-column; }
 
     // ─── Modes ───
     Mod+T                               { toggle-window-floating; }

@@ -70,3 +70,6 @@ end
 
 direnv hook fish | source
 set -g direnv_fish_mode eval_on_arrow
+
+# Created by `pipx` on 2026-06-07 21:14:21
+set PATH $PATH /home/jakob/.local/bin

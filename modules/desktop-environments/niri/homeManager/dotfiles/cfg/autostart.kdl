@@ -2,6 +2,7 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "qs -c noctalia-shell"
+    spawn-sh-at-startup "qs -c noctalia-shell ipc call bar toggle"
 
     spawn-at-startup "spotify-launcher"
     spawn-at-startup "discord"
